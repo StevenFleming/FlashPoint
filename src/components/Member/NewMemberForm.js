@@ -13,7 +13,7 @@ function NewMemberForm(props) {
 
     return firestore.collection('members').add(
       {
-        name: event.target.names.value,
+        name: event.target.name.value,
         gym: event.target.gym.value,
         timeCreated: firestore.FieldValue.serverTimestamp(),
       });
