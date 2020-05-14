@@ -1,10 +1,12 @@
 import React from "react";
 import './App.css'
+import NewMemberForm from './Member/NewMemberForm';
 
 function FeedControl() {
   return (
     <React.Fragment>
-      <div className="FeedContorl"><p>&#9400; Developed by: Steven Fleming</p>
+      <div className="FeedControl">
+        <NewMemberForm />
       </div>
     </React.Fragment>
   )

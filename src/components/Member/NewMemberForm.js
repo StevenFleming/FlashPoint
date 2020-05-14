@@ -1,4 +1,7 @@
-import { useFirestore } from 'react-redux-firebase'
+import React from "react";
+import PropTypes from "prop-types";
+import { useFirestore } from "react-redux-firebase";
+import firebase from "firebase/app";
 
 
 function NewMemberForm(props) {
@@ -17,7 +20,7 @@ function NewMemberForm(props) {
   }
   return (
     <>
-      <h1>Make your own Survey!</h1>
+      <h1>Create Member!</h1>
       <form onSubmit={addMemberToFirestore}>
         <div className="form-group">
           <label>
@@ -39,3 +42,4 @@ function NewMemberForm(props) {
   );
 }
 
+export default NewMemberForm;
