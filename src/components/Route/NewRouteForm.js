@@ -13,7 +13,7 @@ function NewRouteForm(props) {
 
     return firestore.collection('routes').add(
       {
-        name: event.target.name.value,
+        title: event.target.title.value,
         gym: event.target.gym.value,
         setter: event.target.setter.value,
         grade: event.target.setter.value,

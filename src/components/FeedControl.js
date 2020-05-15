@@ -20,16 +20,15 @@ class FeedControl extends React.Component {
   handleSelectingRoute = (id) => {
     this.props.firestore.get({ collection: "routes", doc: id })
       .then((route) => {
-        const firestoreroute = {
+        const firestoreRoute = {
           title: route.get("title"),
-          q1: route.get("q1"),
-          q2: route.get("q2"),
-          q3: route.get("q3"),
-          q4: route.get("q4"),
-          userId: route.get("userId"),
+          gym: route.get("gym"),
+          setter: route.get("setter"),
+          grade: route.get("grade"),
+          incline: route.get("incline"),
           id: route.id,
         }
-        this.setState({ selectedSurvey: firestoreSurvey });
+        this.setState({ selectedRoute: firestoreRoute });
       })
   }
 
