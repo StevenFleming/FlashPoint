@@ -25,6 +25,12 @@ class FeedControl extends React.Component {
     this.setState({ createRouteFormVisible: true });
   }
 
+  handleClickToDefaultView = () => {
+    this.setState({ createRouteFormVisible: false });
+    this.setState({ selectedRoute: false });
+    this.setState({ editing: false });
+  }
+
   handleSelectingRoute = (id) => {
     this.props.firestore.get({ collection: "routes", doc: id })
       .then((route) => {
@@ -45,7 +51,7 @@ class FeedControl extends React.Component {
       return (
         <React.Fragment>
           <div className="FeedControl">
-            <button onClick={this.handleClickToCreateRoute}>Make your own survey</button>
+            <button onClick={this.handleClickToCreateRoute}>Make your own Route</button>
             <RouteList handleSelectingRoute={this.handleSelectingRoute}
             />
           </div>
@@ -55,6 +61,7 @@ class FeedControl extends React.Component {
     else {
       return (
         <React.Fragment>
+          <button onClick={this.handleClickToDefaultView}>Back to Home View</button>
           <NewRouteForm />
         </React.Fragment >
       )
