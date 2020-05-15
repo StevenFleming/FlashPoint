@@ -4,24 +4,23 @@ import { useFirestore } from "react-redux-firebase";
 import firebase from "firebase/app";
 
 
-function NewMemberForm(props) {
+function NewGymForm(props) {
 
   const firestore = useFirestore();
 
-  function addMemberToFirestore(event) {
+  function addGymToFirestore(event) {
     event.preventDefault();
 
-    return firestore.collection('members').add(
+    return firestore.collection('Gyms').add(
       {
         name: event.target.name.value,
-        gym: event.target.gym.value,
         timeCreated: firestore.FieldValue.serverTimestamp(),
       });
   }
   return (
     <>
-      <h1>Create Member!</h1>
-      <form onSubmit={addMemberToFirestore}>
+      <h1>Create Gym!</h1>
+      <form onSubmit={addGymToFirestore}>
         <div className="form-group">
           <label>
             <b>Name
@@ -29,17 +28,11 @@ function NewMemberForm(props) {
           </label>
           <input className="form-control" type="text" name="name" placeholder="Name" />
           <br />
-          <label>
-            <b>Gym
-            </b>
-          </label>
-          <input className="form-control" type="text" name="gym" placeholder="Gym" />
-          <br />
         </div>
-        <button className="btn" type="submit">Add Member</button>
+        <button type="submit">Add Gym</button>
       </form>
     </>
   );
 }
 
-export default NewMemberForm;
+export default NewGymForm;

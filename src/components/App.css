@@ -62,3 +62,8 @@
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
+
+.btn{
+  color: rgb(20, 17, 17);
+  width: 80px;
+}
