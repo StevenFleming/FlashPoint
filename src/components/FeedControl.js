@@ -4,6 +4,7 @@ import NewMemberForm from './Member/NewMemberForm';
 import NewGymForm from './Gym/NewGymForm';
 import NewRouteForm from './Route/NewRouteForm';
 import { render } from "@testing-library/react";
+import RouteList from "./Route/RouteList";
 
 class FeedControl extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class FeedControl extends React.Component {
       createMemberFormVisible: false,
       createRouteFormVisible: false,
       createSetterFormVisible: false,
+      selectedRoute: null,
     };
   }
 
@@ -22,6 +24,7 @@ class FeedControl extends React.Component {
           <NewMemberForm />
           <NewGymForm />
           <NewRouteForm />
+          <RouteList />
         </div>
       </React.Fragment >
     )
