@@ -1,11 +1,11 @@
 // import { useFirestore } from 'react-redux-firebase';
 
-// function EditRouteForm(props) {
+// function EditClimbForm(props) {
 //   const firestore = useFirestore();
 
 
 
-//   function handleEditRouteFormSubmission(event) {
+//   function handleEditClimbFormSubmission(event) {
 //     event.preventDefault();
 //     props.onEditTicket();
 //     const propertiesToUpdate = {
@@ -26,8 +26,8 @@
 
 // return (
 //   <>
-//     <h1>Edit Route!</h1>
-//     <form onSubmit={handleEditRouteFormSubmission}>
+//     <h1>Edit Climb!</h1>
+//     <form onSubmit={handleEditClimbFormSubmission}>
 //       <div className="form-group">
 //         <label>
 //           <b>Title
@@ -61,10 +61,10 @@
 //         <br />
 
 //       </div>
-//       <button className="btn" type="submit">Edit Route</button>
+//       <button className="btn" type="submit">Edit Climb</button>
 //     </form>
 //   </>
 // );
 // }
 
-// export default EditRouteForm;
+// export default EditClimbForm;

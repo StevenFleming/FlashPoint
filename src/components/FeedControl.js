@@ -2,9 +2,9 @@ import React from "react";
 import './App.css'
 // import NewMemberForm from './Member/NewMemberForm';
 // import NewGymForm from './Gym/NewGymForm';
-import RouteInfo from './Route/RouteInfo';
-import NewRouteForm from './Route/NewRouteForm';
-import RouteList from "./Route/RouteList";
+import ClimbInfo from './Climb/ClimbInfo';
+import NewClimbForm from './Climb/NewClimbForm';
+import ClimbList from "./Climb/ClimbList";
 import { connect } from "react-redux";
 import { withFirestore, isLoaded } from "react-redux-firebase";
 
@@ -14,55 +14,55 @@ class FeedControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      createRouteFormVisible: false,
-      selectedRoute: null,
+      createClimbFormVisible: false,
+      selectedClimb: null,
       editing: false
     };
   }
 
-  handleClickToCreateRoute = () => {
-    this.setState({ createRouteFormVisible: true });
+  handleClickToCreateClimb = () => {
+    this.setState({ createClimbFormVisible: true });
   }
 
   handleClickToDefaultView = () => {
-    this.setState({ createRouteFormVisible: false });
-    this.setState({ selectedRoute: null });
+    this.setState({ createClimbFormVisible: false });
+    this.setState({ selectedClimb: null });
     this.setState({ editing: false });
   }
 
-  handleSelectingRoute = (id) => {
-    this.props.firestore.get({ collection: "routes", doc: id })
-      .then((route) => {
-        const firestoreRoute = {
-          title: route.get("title"),
-          gym: route.get("gym"),
-          setter: route.get("setter"),
-          grade: route.get("grade"),
-          incline: route.get("incline"),
-          id: route.id,
+  handleSelectingClimb = (id) => {
+    this.props.firestore.get({ collection: "climbs", doc: id })
+      .then((climb) => {
+        const firestoreClimb = {
+          title: climb.get("title"),
+          gym: climb.get("gym"),
+          setter: climb.get("setter"),
+          grade: climb.get("grade"),
+          incline: climb.get("incline"),
+          id: climb.id,
         }
-        this.setState({ selectedRoute: firestoreRoute });
+        this.setState({ selectedClimb: firestoreClimb });
       })
   }
 
 
   setVisibleComponent = () => {
-    if (this.state.createRouteFormVisible == false) {
+    if (this.state.createClimbFormVisible == false) {
       return (
         <React.Fragment>
           <div className="FeedControl">
-            <button onClick={this.handleClickToCreateRoute}>Make your own Route</button>
-            <RouteList handleSelectingRoute={this.handleSelectingRoute}
+            <button onClick={this.handleClickToCreateClimb}>Make your own Climb</button>
+            <ClimbList handleSelectingClimb={this.handleSelectingClimb}
             />
           </div>
         </React.Fragment >
       )
     }
-    else if (!this.state.selectedRoute == null) {
+    else if (!this.state.selectedClimb == null) {
       return (
         <React.Fragment>
           <button onClick={this.handleClickToDefaultView}>Back to Home View</button>
-          <RouteInfo route={this.state.selectedRoute} />
+          <ClimbInfo climb={this.state.selectedClimb} />
         </React.Fragment >
       )
     }
@@ -70,7 +70,7 @@ class FeedControl extends React.Component {
       return (
         <React.Fragment>
           <button onClick={this.handleClickToDefaultView}>Back to Home View</button>
-          <NewRouteForm />
+          <NewClimbForm />
         </React.Fragment >
       )
     }

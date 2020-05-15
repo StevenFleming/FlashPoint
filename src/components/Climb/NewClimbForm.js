@@ -4,14 +4,14 @@ import { useFirestore } from "react-redux-firebase";
 import firebase from "firebase/app";
 
 
-function NewRouteForm(props) {
+function NewClimbForm(props) {
 
   const firestore = useFirestore();
 
-  function addRouteToFirestore(event) {
+  function addClimbToFirestore(event) {
     event.preventDefault();
 
-    return firestore.collection('routes').add(
+    return firestore.collection('climbs').add(
       {
         title: event.target.title.value,
         gym: event.target.gym.value,
@@ -23,8 +23,8 @@ function NewRouteForm(props) {
   }
   return (
     <>
-      <h1>Create Route!</h1>
-      <form onSubmit={addRouteToFirestore}>
+      <h1>Create Climb!</h1>
+      <form onSubmit={addClimbToFirestore}>
         <div className="form-group">
           <label>
             <b>Title
@@ -58,10 +58,10 @@ function NewRouteForm(props) {
           <br />
 
         </div>
-        <button className="btn" type="submit">Add Route</button>
+        <button className="btn" type="submit">Add Climb</button>
       </form>
     </>
   );
 }
 
-export default NewRouteForm;
+export default NewClimbForm;

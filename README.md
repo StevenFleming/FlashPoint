@@ -49,39 +49,39 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
   Market: Indoor Climbing Gyms
 
 ## Description: 
-This Application empowers climbing gyms to better understand the relationship between members and routes. Gyms input fields regarding their what current routes they offer  while users report their progress on the routes. The application provides statistical analyses and visualization of the relationships between climbers and the gyms routes. 
+This Application empowers climbing gyms to better understand the relationship between members and climbs. Gyms input fields regarding their what current climbs they offer  while users report their progress on the climbs. The application provides statistical analyses and visualization of the relationships between climbers and the gyms climbs. 
 
 ## Use Cases
-	Users are indoor climbing gyms who want to better understand the relationships between members of the gym and the gyms routes. 
+	Users are indoor climbing gyms who want to better understand the relationships between members of the gym and the gyms climbs. 
 
-Gyms would input into the application which routes are currently available at their gym. Along with additional fields such as who set the route, what grade the route is, when the route was set and other metaData. The Gym would then provide their members with the application who would gain access to these fields. 
+Gyms would input into the application which climbs are currently available at their gym. Along with additional fields such as who set the climb, what grade the climb is, when the climb was set and other metaData. The Gym would then provide their members with the application who would gain access to these fields. 
 
-Members could then log data based on their experience with individual routes. So a member could log a route as completed, as attempted, as a project or as flashed. 
+Members could then log data based on their experience with individual climbs. So a member could log a climb as completed, as attempted, as a project or as flashed. 
 
-The product could then visualize progress for Members, showing their route progression over time, which routes they have yet to complete, what is the difficulty range for flashing, what is the range difficulty for projects. Also the application could show when new routes are incoming and when your project is being taken down! 
+The product could then visualize progress for Members, showing their climb progression over time, which climbs they have yet to complete, what is the difficulty range for flashing, what is the range difficulty for projects. Also the application could show when new climbs are incoming and when your project is being taken down! 
 
-The product could visualize data for Gyms. Such as what is the completion rating for a particular route. What are the most attempted routes in the gym. What percentage of users are able to complete which range of problems. Which routes have low completion rates for their grade. Which of your setters are making the most difficult/attempted problems. 
+The product could visualize data for Gyms. Such as what is the completion rating for a particular climb. What are the most attempted climbs in the gym. What percentage of users are able to complete which range of problems. Which climbs have low completion rates for their grade. Which of your setters are making the most difficult/attempted problems. 
 
-Gyms struggling with retaining members due in part to the plateau of climbing progress that many climbers experience during their climbing careers. This app would help to allow cimbers to visualize this skill progression and seeing incremental progress goes a huge way to staying motivated to climb. Also Gyms use the user data to fine tune their route setting journey’s. I personally would also just like to know what percentage of each grade at my local gym, I can flash, send, project, or can’t send yet. If I’m going to be honest I’d also like to see what that looks like for my friends who climb at this gym too. Although the application could visualize Leaderboards and other such data, I’m skeptical of presenting any kind of data in a competitive setting. I don’t think high-scores are in step with the bouldering communities approach to the sport and I really admire how cooperative these communities are and wouldn’t want to jeopardize that core concept. 
+Gyms struggling with retaining members due in part to the plateau of climbing progress that many climbers experience during their climbing careers. This app would help to allow cimbers to visualize this skill progression and seeing incremental progress goes a huge way to staying motivated to climb. Also Gyms use the user data to fine tune their climb setting journey’s. I personally would also just like to know what percentage of each grade at my local gym, I can flash, send, project, or can’t send yet. If I’m going to be honest I’d also like to see what that looks like for my friends who climb at this gym too. Although the application could visualize Leaderboards and other such data, I’m skeptical of presenting any kind of data in a competitive setting. I don’t think high-scores are in step with the bouldering communities approach to the sport and I really admire how cooperative these communities are and wouldn’t want to jeopardize that core concept. 
 
-Both gathering feedback on particular routes and understanding the relationship between routes and members. It could also go a long way to creating more consistent and reliable rating systems for a particular gym. The rating system at every gym is unique and subjective. Routes are primarily graded by their respective setter which is an entirely subjective matter. Many Setter’s have different feelings about what constitutes each grade of climb, it's also nearly impossible to notice trends on the routes you’ve set outside of extreme examples. The user feedback from this application could help guide setters to align with their members and create a more intune rating system for their gym. 
+Both gathering feedback on particular climbs and understanding the relationship between climbs and members. It could also go a long way to creating more consistent and reliable rating systems for a particular gym. The rating system at every gym is unique and subjective. Climbs are primarily graded by their respective setter which is an entirely subjective matter. Many Setter’s have different feelings about what constitutes each grade of climb, it's also nearly impossible to notice trends on the climbs you’ve set outside of extreme examples. The user feedback from this application could help guide setters to align with their members and create a more intune rating system for their gym. 
 
 ## Minimum Viable Product
  * User registration (Database)
  * User login/sign-out (Database Aut)
  * Gym registration
  * Gym login/sign-out
- * Gym can create routes with the following properties: Setter, Grade, Incline, DateSet, DateToRemove
- * Users can log attempts on routes with the following properties : Completed, Number of Attempts, Feedback
+ * Gym can create climbs with the following properties: Setter, Grade, Incline, DateSet, DateToRemove
+ * Users can log attempts on climbs with the following properties : Completed, Number of Attempts, Feedback
  * DataBase stores Gym and User Data
 
  * Display for User 
 visualization of their current climbing range at the gym
 visualization of their grade progression over time
  * Display for Gym
-Gym can see the completion rate for the respective routes
-What percentage of users can complete each route 
-How these metrics compare to other routes of the same grade
+Gym can see the completion rate for the respective climbs
+What percentage of users can complete each climb 
+How these metrics compare to other climbs of the same grade
 
 
 ## Tools for MVP
@@ -97,17 +97,17 @@ How these metrics compare to other routes of the same grade
 
 Additional Features
 Users can form social connections, share their progress and create climbing sessions with other users
-Gym can create routes with the following additional properties: Number of Holds, : Number of Hold Types,
-Users can input fields in respect to routes with the following additional properties :
+Gym can create climbs with the following additional properties: Number of Holds, : Number of Hold Types,
+Users can input fields in respect to climbs with the following additional properties :
 Flashed
 DataBase Stores setters
 Display for Setters
-All routes
-Current Routes
-Most popular routes
-Respective Route difficulty vs Gym Route difficulty
+All climbs
+Current Climbs
+Most popular climbs
+Respective Climb difficulty vs Gym Climb difficulty
  React Native - to support Mobile development
- When on Iphones users can scan barcodes to get route information
+ When on Iphones users can scan barcodes to get climb information
 
 
 
