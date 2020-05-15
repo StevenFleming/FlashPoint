@@ -16,7 +16,7 @@ function NewRouteForm(props) {
         title: event.target.title.value,
         gym: event.target.gym.value,
         setter: event.target.setter.value,
-        grade: event.target.setter.value,
+        grade: event.target.grade.value,
         incline: event.target.incline.value,
         timeCreated: firestore.FieldValue.serverTimestamp(),
       });
@@ -52,7 +52,6 @@ function NewRouteForm(props) {
           </label>
           <input className="form-control" type="text" name="grade" placeholder="Grade" />
           <br />
-
           <label>
             <b>incline
             </b>
