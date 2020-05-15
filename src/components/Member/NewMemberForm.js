@@ -18,6 +18,7 @@ function NewMemberForm(props) {
         timeCreated: firestore.FieldValue.serverTimestamp(),
       });
   }
+
   return (
     <>
       <h1>Create Member!</h1>

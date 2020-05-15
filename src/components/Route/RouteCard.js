@@ -1,6 +1,7 @@
 import React from "react";
 import { useFirestoreConnect, isLoaded, isEmpty } from "react-redux-firebase";
 
+
 function RouteCard(props) {
   const { route, onRouteClicked } = props;
   return (
