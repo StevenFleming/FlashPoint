@@ -2,6 +2,7 @@ import React from "react";
 import './App.css'
 import NewMemberForm from './Member/NewMemberForm';
 import NewGymForm from './Gym/NewGymForm';
+import NewRouteForm from './Route/NewRouteForm';
 import { render } from "@testing-library/react";
 
 class FeedControl extends React.Component {
@@ -20,6 +21,7 @@ class FeedControl extends React.Component {
         <div className="FeedControl">
           <NewMemberForm />
           <NewGymForm />
+          <NewRouteForm />
         </div>
       </React.Fragment >
     )
