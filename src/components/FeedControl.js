@@ -39,7 +39,7 @@ class FeedControl extends React.Component {
           <NewMemberForm />
           <NewGymForm />
           <NewRouteForm />
-          <RouteList />
+          <RouteList handleSelectingRoute={this.handleSelectingRoute} />
         </div>
       </React.Fragment >
     )
