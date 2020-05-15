@@ -10,12 +10,13 @@ import firebase from "./firebase";
 import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
 
-const store = createStore(rootReducer);
+const intitalState = {}
+const store = createStore(rootReducer, intitalState);
 
 const rrfProps = {
   firebase,
   config: {
-    userProfile: "users"
+    userProfile: "users",
   },
   dispatch: store.dispatch,
   createFirestoreInstance

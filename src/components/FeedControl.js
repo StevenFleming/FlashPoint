@@ -5,6 +5,10 @@ import NewGymForm from './Gym/NewGymForm';
 import NewRouteForm from './Route/NewRouteForm';
 import { render } from "@testing-library/react";
 import RouteList from "./Route/RouteList";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withFirestore, isLoaded } from "react-redux-firebase";
+
 
 class FeedControl extends React.Component {
   constructor(props) {
@@ -55,5 +59,9 @@ class FeedControl extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {}
+}
 
-export default FeedControl;
+FeedControl = connect(mapStateToProps)(FeedControl);
+export default withFirestore(FeedControl);
