@@ -10,15 +10,16 @@ function RouteList(props) {
     { collection: 'routes' }
   ])
 
+
   const routes = useSelector(state => state.firestore.ordered.routes)
 
   if (isLoaded(routes)) {
+    console.log("full collection of Routes", routes);
     return (
       <React.Fragment>
         <br />
         <br />
         <h1><b>All Route's</b></h1>
-        <h1>{routes.id}</h1>
         <hr />
         {routes.map((route) => {
           return <RouteCard
@@ -35,6 +36,7 @@ function RouteList(props) {
     </React.Fragment>
   }
 }
+
 
 RouteList.proptype = {
   onRouteSelection: PropTypes.func

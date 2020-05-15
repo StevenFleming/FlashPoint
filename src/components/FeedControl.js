@@ -2,6 +2,7 @@ import React from "react";
 import './App.css'
 // import NewMemberForm from './Member/NewMemberForm';
 // import NewGymForm from './Gym/NewGymForm';
+import RouteInfo from './Route/RouteInfo';
 import NewRouteForm from './Route/NewRouteForm';
 import RouteList from "./Route/RouteList";
 import { connect } from "react-redux";
@@ -13,9 +14,7 @@ class FeedControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // createMemberFormVisible: false,
       createRouteFormVisible: false,
-      // createSetterFormVisible: false,
       selectedRoute: null,
       editing: false
     };
@@ -27,7 +26,7 @@ class FeedControl extends React.Component {
 
   handleClickToDefaultView = () => {
     this.setState({ createRouteFormVisible: false });
-    this.setState({ selectedRoute: false });
+    this.setState({ selectedRoute: null });
     this.setState({ editing: false });
   }
 
@@ -46,6 +45,7 @@ class FeedControl extends React.Component {
       })
   }
 
+
   setVisibleComponent = () => {
     if (this.state.createRouteFormVisible == false) {
       return (
@@ -55,6 +55,14 @@ class FeedControl extends React.Component {
             <RouteList handleSelectingRoute={this.handleSelectingRoute}
             />
           </div>
+        </React.Fragment >
+      )
+    }
+    else if (!this.state.selectedRoute == null) {
+      return (
+        <React.Fragment>
+          <button onClick={this.handleClickToDefaultView}>Back to Home View</button>
+          <RouteInfo route={this.state.selectedRoute} />
         </React.Fragment >
       )
     }
