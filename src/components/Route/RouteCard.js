@@ -1,15 +1,15 @@
 import React from "react";
+import { useFirestoreConnect, isLoaded, isEmpty } from "react-redux-firebase";
 
 function RouteCard(props) {
-  const { route, handleSelectingRoute } = props;
+  const { route, onRouteClicked } = props;
   return (
-    < React.Fragment >
-      <div onClick={() => handleSelectingRoute(route.id), console.log("console.log of routeid", route.id)}>
+    <React.Fragment>
+      <div onClick={() => onRouteClicked(route.id)}>
         <h2>{route.title}</h2>
-        <h2>{route.grade}</h2>
         <hr />
       </div>
-    </React.Fragment >
+    </React.Fragment>
   )
 }
 

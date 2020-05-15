@@ -38,14 +38,12 @@ function NewRouteForm(props) {
           </label>
           <input className="form-control" type="text" name="gym" placeholder="Gym" />
           <br />
-
           <label>
             <b>setter
             </b>
           </label>
           <input className="form-control" type="text" name="setter" placeholder="Setter" />
           <br />
-
           <label>
             <b>Grade
             </b>

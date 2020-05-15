@@ -3,6 +3,7 @@ import './App.css'
 import NewMemberForm from './Member/NewMemberForm';
 import NewGymForm from './Gym/NewGymForm';
 import NewRouteForm from './Route/NewRouteForm';
+// import EditRouteForm from './Route/EditRouteForm';
 import { render } from "@testing-library/react";
 import RouteList from "./Route/RouteList";
 import PropTypes from "prop-types";
@@ -18,7 +19,15 @@ class FeedControl extends React.Component {
       createRouteFormVisible: false,
       createSetterFormVisible: false,
       selectedRoute: null,
+      editing: false
     };
+  }
+
+  handleEditingRouteInList = () => {
+    this.setState({
+      editing: false,
+      selectedRoute: null
+    });
   }
 
   handleSelectingRoute = (id) => {
@@ -33,6 +42,8 @@ class FeedControl extends React.Component {
           id: route.id,
         }
         this.setState({ selectedRoute: firestoreRoute });
+        console.log(firestoreRoute);
+        console.log(this.state.selectedRoute);
       })
   }
 
@@ -43,12 +54,18 @@ class FeedControl extends React.Component {
           <NewMemberForm />
           <NewGymForm />
           <NewRouteForm />
-          <RouteList handleSelectingRoute={this.handleSelectingRoute} />
+          <RouteList handleSelectingRoute={this.handleSelectingRoute}
+          />
         </div>
       </React.Fragment >
     )
   }
 
+
+
+  handleClickToCreateRoute = () => {
+    this.setState({ createRouteFormVisible: true });
+  }
   render() {
     let currentView = this.setVisibleComponent();
     return (

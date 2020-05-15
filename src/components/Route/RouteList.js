@@ -2,14 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, isLoaded, isEmpty } from "react-redux-firebase";
 import RouteCard from "./RouteCard";
+import PropTypes from "prop-types";
 
 function RouteList(props) {
 
   useFirestoreConnect([
     { collection: 'routes' }
   ])
+
   const routes = useSelector(state => state.firestore.ordered.routes)
-  console.log(routes);
 
   if (isLoaded(routes)) {
     return (
@@ -22,7 +23,7 @@ function RouteList(props) {
         {routes.map((route) => {
           return <RouteCard
             route={route}
-            handleSelectingRoute={props.handleSelectingRoute}
+            onRouteClicked={props.handleSelectingRoute}
             key={route.id}
           />
         })}
@@ -33,6 +34,10 @@ function RouteList(props) {
       <h4>Loading...</h4>
     </React.Fragment>
   }
+}
+
+RouteList.proptype = {
+  onRouteSelection: PropTypes.func
 }
 
 export default RouteList;
