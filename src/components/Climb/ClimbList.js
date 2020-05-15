@@ -23,6 +23,7 @@ function ClimbList(props) {
         <hr />
         {climbs.map((climb) => {
           return <ClimbCard
+            editClimb={props.handleClickToEditClimb}
             climb={climb}
             onClimbClicked={props.handleSelectingClimb}
             key={climb.id}

@@ -5,6 +5,7 @@ import './App.css'
 import ClimbInfo from './Climb/ClimbInfo';
 import NewClimbForm from './Climb/NewClimbForm';
 import ClimbList from "./Climb/ClimbList";
+import EditClimbForm from './Climb/EditClimbForm';
 import { connect } from "react-redux";
 import { withFirestore, isLoaded } from "react-redux-firebase";
 
@@ -22,6 +23,10 @@ class FeedControl extends React.Component {
 
   handleClickToCreateClimb = () => {
     this.setState({ createClimbFormVisible: true });
+  }
+
+  handleClickToEditClimb = () => {
+    this.setState({ editing: true });
   }
 
   handleClickToDefaultView = () => {
@@ -53,12 +58,15 @@ class FeedControl extends React.Component {
           <div className="FeedControl">
             <button onClick={this.handleClickToCreateClimb}>Make your own Climb</button>
             <ClimbList handleSelectingClimb={this.handleSelectingClimb}
+              handleClickToEditClimb={this.handleClickToEditClimb}
             />
           </div>
         </React.Fragment >
       )
     }
-    else if (!this.state.selectedClimb == null) {
+    else if (!this.state.selectedClimb == null && this.state.editing === true) {
+      console.log("----------", this.state.selectedClimb);
+      console.log(this.state.createClimbFormVisible);
       return (
         <React.Fragment>
           <button onClick={this.handleClickToDefaultView}>Back to Home View</button>
