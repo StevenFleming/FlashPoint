@@ -27,10 +27,10 @@ function NewRouteForm(props) {
       <form onSubmit={addRouteToFirestore}>
         <div className="form-group">
           <label>
-            <b>Name
+            <b>Title
             </b>
           </label>
-          <input className="form-control" type="text" name="name" placeholder="Name" />
+          <input className="form-control" type="text" name="title" placeholder="Title" />
           <br />
           <label>
             <b>Gym

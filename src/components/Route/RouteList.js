@@ -18,7 +18,6 @@ function RouteList(props) {
         <br />
         <h1><b>All Route's</b></h1>
         <hr />
-        <p>{routes.title}</p>
         {routes.map((route) => {
           return <RouteCard
             route={route}
