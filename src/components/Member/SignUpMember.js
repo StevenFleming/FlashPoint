@@ -4,6 +4,12 @@ import { useFirestore } from "react-redux-firebase";
 import firebase from "firebase/app";
 
 
+import React from "react";
+import firebase from 'firebase/app';
+import { isLoaded } from "react-redux-firebase";
+import swal from 'sweetalert2';
+import { NavLink } from "react-router-dom";
+
 function NewMemberForm(props) {
 
   const firestore = useFirestore();

@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useFirestore } from "react-redux-firebase";
-import firebase from "firebase/app";
+
 
 
 function EditClimbForm(props) {
