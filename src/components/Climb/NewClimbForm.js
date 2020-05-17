@@ -21,6 +21,7 @@ function NewClimbForm(props) {
         timeCreated: firestore.FieldValue.serverTimestamp(),
       });
   }
+
   return (
     <>
       <h1>Create Climb!</h1>
