@@ -1,5 +1,5 @@
 import firebase from "firebase/app";
-
+import React from "react";
 
 function SignUpMember() {
 

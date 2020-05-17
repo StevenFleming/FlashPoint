@@ -3,6 +3,7 @@ import './App.css';
 import Header from './../components/Header.js'
 import Footer from './../components/Footer.js'
 import ClimbControl from './Climb/ClimbControl.js'
+import MemberControl from './Member/MemberControl.js'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <div className="container">
         <ClimbControl />
+        <MemberControl />
       </div>
       <Footer />
     </>

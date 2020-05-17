@@ -1,9 +1,8 @@
 import React from "react";
 import '.././App.css'
-import NewMemberForm from "./MemberControl"
-import { connect } from "react-redux";
-import { withFirestore } from "react-redux-firebase";
 import SignOutMember from "./SignOutMember";
+import SignInMember from "./SignInMember";
+import SignUpMember from "./SignUpMember";
 
 
 class MemberControl extends React.Component {
@@ -12,17 +11,25 @@ class MemberControl extends React.Component {
     this.state = {
     };
   }
-}
 
+  setVisibleComponent = () => {
+    return (
+      <>
+        <SignUpMember />
+        <SignInMember />
+        <SignOutMember />
+      </>
+    )
+  }
 
-setVisibleComponent = () => {
-  return (
-    <>
-      <SignUpMember />
-      <SignInMember />
-      <SignOutMember />
-    </>
-  );
+  render() {
+    let currentView = this.setVisibleComponent();
+    return (
+      <>
+        {currentView}
+      </>
+    )
+  }
 }
 
 export default MemberControl

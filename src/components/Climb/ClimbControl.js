@@ -99,41 +99,6 @@ class ClimbControl extends React.Component {
     }
   }
 
-
-
-
-
-  //       < React.Fragment >
-  //   <div className="ClimbControl">
-  //     <button onClick={this.handleClickToCreateClimb}>Make your own Climb</button>
-  //     <ClimbList handleSelectingClimb={this.handleSelectingClimb}
-  //       handleClickToEditClimb={this.handleClickToEditClimb}
-  //     />
-  //   </div>
-  // </React.Fragment >
-  //       )
-  //   }
-  //     else if (this.state.editing === true) {
-  //   return (
-  //     <React.Fragment>
-  //       <button onClick={this.handleClickToDefaultView}>Back to Home View</button>
-  //       <EditClimbForm climb={this.state.selectedClimb} />
-  //       <ClimbInfo climb={this.state.selectedClimb} />
-  //     </React.Fragment >
-  //   )
-  // }
-  // else {
-  //   return (
-  //     <React.Fragment>
-  //       <button onClick={this.handleClickToDefaultView}>Back to Home View</button>
-  //       <NewClimbForm />
-  //     </React.Fragment >
-  //   )
-  // }
-  //   }
-
-
-
   render() {
     let currentView = this.setVisibleComponent();
     return (
