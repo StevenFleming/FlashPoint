@@ -3,13 +3,15 @@ import firebase from "firebase/app";
 
 
 function SignUpMember() {
-
+  const auth = firebase.auth();
   function doSignUp(event) {
+
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
       console.log("successfully signed up!");
+      console.log("coming from Sign Up Member", auth.currentUser)
     }).catch(function (error) {
       console.log(error.message);
     });

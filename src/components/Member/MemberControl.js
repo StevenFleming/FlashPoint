@@ -3,6 +3,7 @@ import '.././App.css'
 import SignOutMember from "./SignOutMember";
 import SignInMember from "./SignInMember";
 import SignUpMember from "./SignUpMember";
+import firebase from 'firebase/app';
 
 
 class MemberControl extends React.Component {
@@ -13,13 +14,24 @@ class MemberControl extends React.Component {
   }
 
   setVisibleComponent = () => {
-    return (
-      <>
-        <SignUpMember />
-        <SignInMember />
-        <SignOutMember />
-      </>
-    )
+    const auth = firebase.auth();
+    console.log(auth.currentUser);
+    if (auth.currentUser !== null) {
+      return (
+        <>
+          <SignUpMember />
+          <SignInMember />
+          <SignOutMember />
+        </>
+      )
+    }
+    else {
+      return (
+        <>
+          <SignOutMember />
+        </>
+      )
+    }
   }
 
   render() {
