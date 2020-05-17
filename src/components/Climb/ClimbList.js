@@ -26,6 +26,7 @@ function ClimbList(props) {
             editClimb={props.handleEditClimb}
             climb={climb}
             key={climb.id}
+            handleClickToDeleteClimb={props.handleClickToDeleteClimb}
             handleClimbingInfo={props.handleClimbingInfo}
           />
         })}

@@ -43,7 +43,15 @@ class ClimbControl extends React.Component {
     this.setState({ createClimbFormVisible: false });
     this.setState({ selectedClimb: null });
     this.setState({ editing: false });
+    this.setState({ climbInfoVisible: false })
   }
+
+  handleClickToDeleteClimb = (id) => {
+    this.props.firestore.delete({ collection: "climbs", doc: id });
+    this.setState({
+      selectedClimb: null,
+    });
+  };
 
   handleSelectingClimb = (id) => {
     this.props.firestore.get({ collection: "climbs", doc: id })
@@ -90,7 +98,7 @@ class ClimbControl extends React.Component {
         <>
           <button onClick={this.handleClickToCreateClimb}>Click To Create Climb</button>
           <ClimbList
-            handleEditClimb={this.handleEditClimb} handleClimbingInfo={this.handleClickToSeeClimbInfo} />
+            handleEditClimb={this.handleEditClimb} handleClimbingInfo={this.handleClickToSeeClimbInfo} handleClickToDeleteClimb={this.handleClickToDeleteClimb} />
         </>
       )
     }

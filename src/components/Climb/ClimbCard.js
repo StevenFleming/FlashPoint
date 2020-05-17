@@ -2,7 +2,7 @@ import React from "react";
 
 
 function ClimbCard(props) {
-  const { climb, onClimbClicked, editClimb, handleClimbingInfo } = props;
+  const { climb, onClimbClicked, editClimb, handleClimbingInfo, handleClickToDeleteClimb } = props;
 
   if (climb !== null)
     return (
@@ -10,6 +10,7 @@ function ClimbCard(props) {
         <div>
           <button onClick={() => editClimb(climb.id)}>Edit this Climb</button>
           <button onClick={() => handleClimbingInfo(climb.id)}>See Info on this Climb</button>
+          <button onClick={() => handleClickToDeleteClimb(climb.id)}> Delete Climb from FiresStore</button>
           <h2>{climb.title}</h2>
           <hr />
         </div>
