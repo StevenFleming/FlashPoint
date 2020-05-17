@@ -23,10 +23,10 @@ function ClimbList(props) {
         <hr />
         {climbs.map((climb) => {
           return <ClimbCard
-            editClimb={props.handleClickToEditClimb}
+            editClimb={props.handleEditClimb}
             climb={climb}
-            onClimbClicked={props.handleSelectingClimb}
             key={climb.id}
+            handleClimbingInfo={props.handleClimbingInfo}
           />
         })}
       </React.Fragment>

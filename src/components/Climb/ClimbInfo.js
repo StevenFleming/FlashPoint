@@ -4,7 +4,7 @@ function ClimbInfo(props) {
   const { climb } = props;
   return (
     <React.Fragment>
-      <h1>Selected Climb is {climb.title} </h1>
+      <h1>You've made it to ClimbInfo!!!} </h1>
       <p> Display this</p>
     </React.Fragment>
   )

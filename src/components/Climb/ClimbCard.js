@@ -1,17 +1,15 @@
 import React from "react";
-import { useFirestoreConnect, isLoaded, isEmpty, reactReduxFirebase } from "react-redux-firebase";
-import ClimbInfo from "./ClimbInfo"
 
 
 function ClimbCard(props) {
-  const { climb, onClimbClicked, editClimb } = props;
+  const { climb, onClimbClicked, editClimb, handleClimbingInfo } = props;
 
   if (climb !== null)
     return (
       <React.Fragment>
         <div>
-          <button onClick={() => onClimbClicked(climb.id)}>Select this Climb</button>
-          <button onClick={() => editClimb()}>Should set state editClimb to true</button>
+          <button onClick={() => editClimb(climb.id)}>Edit this Climb</button>
+          <button onClick={() => handleClimbingInfo(climb.id)}>See Info on this Climb</button>
           <h2>{climb.title}</h2>
           <hr />
         </div>

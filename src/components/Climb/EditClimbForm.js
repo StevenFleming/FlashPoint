@@ -49,7 +49,7 @@ function EditClimbForm(props) {
             <b>Edit Grade: Current Grade : {climb.grade}
             </b>
           </label>
-          <input className="form-control" type="text" name="grade" placeholder="Grade" />
+          <input className="form-control" type="text" name="grade" placeholder={"Grade"} />
           <br />
           <label>
             <b> Edit Incline: Current Incline: {climb.incline}

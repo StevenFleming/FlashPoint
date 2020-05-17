@@ -23,23 +23,20 @@ class ClimbControl extends React.Component {
     };
   }
 
-  handleClickToSeeClimbInfo = () => {
+  handleClickToSeeClimbInfo = (id) => {
     this.setState({ climbInfoVisible: true })
+    this.handleSelectingClimb(id);
   }
 
   handleClickToCreateClimb = () => {
     this.setState({ createClimbFormVisible: true });
   }
 
-  handleClickToEditClimb = () => {
-    this.setState({ editClimbFormVisible: true });
-    console.log(this.state.editClimbFormVisible)
-  }
-
   handleEditClimb = (id) => {
-    // this.setState({ editClimbFormVisible: false });
     this.handleSelectingClimb(id);
+    this.setState({ editClimbFormVisible: true });
     console.log("from edit climb", this.state.selectedClimb)
+    console.log("from edit climb", this.state.editClimbFormVisible)
   };
 
   handleClickToDefaultView = () => {
@@ -65,21 +62,15 @@ class ClimbControl extends React.Component {
 
 
   setVisibleComponent = () => {
-    if (this.state.editClimbFormVisible) {
+    if ((this.state.selectedClimb != null) && (this.state.climbInfoVisible === true)) {
       return (
         <>
-          <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
-          <EditClimbForm climb={this.state.selectedClimb} onEditClimbFormSubmission={this.handleEditClimb} />
-        </>
-      );
-    } else if (this.state.climbInfoVisible) {
-      return (
-        <>
+          <p>Made it to ClimbInfo</p>
           <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
           <ClimbInfo climb={this.state.selectedClimb} />
         </>
       )
-    } else if (this.state.selectedClimb != null) {
+    } else if ((this.state.selectedClimb != null) && (this.state.editClimbFormVisible === true)) {
       return (
         <>
           <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
@@ -97,11 +88,9 @@ class ClimbControl extends React.Component {
     else {
       return (
         <>
-          <button onClick={this.handleClickToSeeClimbInfo}>See Climbing ClimbInfo</button>
-          <button onClick={this.handleClickToCreateClimb}>Create climb</button>
-          <button onClick={this.handleClickToEditClimb}>Create climb</button>
-          <ClimbList handleSelectingClimb={this.handleSelectingClimb}
-            handleClickToEditClimb={this.handleClickToEditClimb} />
+          <button onClick={this.handleClickToCreateClimb}>Click To Create Climb</button>
+          <ClimbList
+            handleEditClimb={this.handleEditClimb} handleClimbingInfo={this.handleClickToSeeClimbInfo} />
         </>
       )
     }
