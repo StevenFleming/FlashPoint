@@ -83,7 +83,7 @@ class ClimbControl extends React.Component {
       return (
         <>
           <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
-          <EditClimbForm climb={this.state.selectedClimb} onEditClimbFormSubmission={this.handleEditClimb} />
+          <EditClimbForm climb={this.state.selectedClimb} onEditClimbFormSubmission={this.handleEditClimb} BackToDefaultView={this.handleClickToDefaultView} />
         </>
       );
     } else if (this.state.createClimbFormVisible) {

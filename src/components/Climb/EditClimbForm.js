@@ -5,8 +5,7 @@ import firebase from "firebase/app";
 
 
 function EditClimbForm(props) {
-  const { climb } = props;
-
+  const { climb, BackToDefaultView } = props;
   const firestore = useFirestore();
 
   function editClimbToFirestore(event) {
@@ -29,39 +28,40 @@ function EditClimbForm(props) {
       <form onSubmit={editClimbToFirestore}>
         <div className="form-group">
           <label>
-            <b>Title
+            <b>Edit Title : Current title:  {climb.title}
             </b>
           </label>
           <input className="form-control" type="text" name="title" placeholder="Title" />
           <br />
           <label>
-            <b>Gym
+            <b>Edit Gym: Current Gym : {climb.gym}
             </b>
           </label>
           <input className="form-control" type="text" name="gym" placeholder="Gym" />
           <br />
           <label>
-            <b>setter
+            <b> Edit Setter: Current Setter : {climb.setter}
             </b>
           </label>
           <input className="form-control" type="text" name="setter" placeholder="Setter" />
           <br />
           <label>
-            <b>Grade
+            <b>Edit Grade: Current Grade : {climb.grade}
             </b>
           </label>
           <input className="form-control" type="text" name="grade" placeholder="Grade" />
           <br />
           <label>
-            <b>incline
+            <b> Edit Incline: Current Incline: {climb.incline}
             </b>
           </label>
           <input className="form-control" type="text" name="incline" placeholder="Incline" />
           <br />
 
         </div>
-        <button className="btn" type="submit">Add Climb</button>
+        <button className="btn" type="submit"> Edit {climb.title} </button>
       </form>
+      <button onClick={() => BackToDefaultView()}>Return to default view</button>
     </>
   );
 }
