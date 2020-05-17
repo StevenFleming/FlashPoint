@@ -3,6 +3,7 @@ import '.././App.css'
 import NewMemberForm from "./MemberControl"
 import { connect } from "react-redux";
 import { withFirestore } from "react-redux-firebase";
+import SignOutMember from "./SignOutMember";
 
 
 class MemberControl extends React.Component {
@@ -17,7 +18,9 @@ class MemberControl extends React.Component {
 setVisibleComponent = () => {
   return (
     <>
+      <SignUpMember />
       <SignInMember />
+      <SignOutMember />
     </>
   );
 }

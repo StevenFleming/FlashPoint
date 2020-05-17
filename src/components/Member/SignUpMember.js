@@ -1,52 +1,35 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { useFirestore } from "react-redux-firebase";
 import firebase from "firebase/app";
 
 
-import React from "react";
-import firebase from 'firebase/app';
-import { isLoaded } from "react-redux-firebase";
-import swal from 'sweetalert2';
-import { NavLink } from "react-router-dom";
+function SignUpMember() {
 
-function NewMemberForm(props) {
-
-  const firestore = useFirestore();
-
-  function addMemberToFirestore(event) {
+  function doSignUp(event) {
     event.preventDefault();
-
-    return firestore.collection('members').add(
-      {
-        name: event.target.name.value,
-        gym: event.target.gym.value,
-        timeCreated: firestore.FieldValue.serverTimestamp(),
-      });
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
+      console.log("successfully signed up!");
+    }).catch(function (error) {
+      console.log(error.message);
+    });
   }
 
   return (
-    <>
-      <h1>Create Member!</h1>
-      <form onSubmit={addMemberToFirestore}>
-        <div className="form-group">
-          <label>
-            <b>Name
-            </b>
-          </label>
-          <input className="form-control" type="text" name="name" placeholder="Name" />
-          <br />
-          <label>
-            <b>Gym
-            </b>
-          </label>
-          <input className="form-control" type="text" name="gym" placeholder="Gym" />
-          <br />
-        </div>
-        <button className="btn" type="submit">Add Member</button>
+    <React.Fragment>
+      <h1>Sign up</h1>
+      <form onSubmit={doSignUp}>
+        <input
+          type='text'
+          name='email'
+          placeholder='email' />
+        <input
+          type='password'
+          name='password'
+          placeholder='Password' />
+        <button type='submit'>Sign up</button>
       </form>
-    </>
-  );
+    </React.Fragment>
+  )
 }
-
-export default NewMemberForm;
+export default SignUpMember;
