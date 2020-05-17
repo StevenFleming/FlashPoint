@@ -52,7 +52,7 @@ function NewClimbForm(props) {
           <input className="form-control" type="text" name="grade" placeholder="Grade" />
           <br />
           <label>
-            <b>incline
+            <b>Incline
             </b>
           </label>
           <input className="form-control" type="text" name="incline" placeholder="Incline" />

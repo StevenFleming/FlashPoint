@@ -1,14 +1,11 @@
 import React from "react";
 import '.././App.css'
-import Climb from './Climb'
-// import NewMemberForm from './Member/NewMemberForm';
-// import NewGymForm from './Gym/NewGymForm';
 import ClimbInfo from './ClimbInfo';
 import NewClimbForm from './NewClimbForm';
 import ClimbList from "./ClimbList";
 import EditClimbForm from './EditClimbForm';
 import { connect } from "react-redux";
-import { withFirestore, isLoaded } from "react-redux-firebase";
+import { withFirestore } from "react-redux-firebase";
 
 
 
@@ -35,8 +32,6 @@ class ClimbControl extends React.Component {
   handleEditClimb = (id) => {
     this.handleSelectingClimb(id);
     this.setState({ editClimbFormVisible: true });
-    console.log("from edit climb", this.state.selectedClimb)
-    console.log("from edit climb", this.state.editClimbFormVisible)
   };
 
   handleClickToDefaultView = () => {
@@ -45,13 +40,6 @@ class ClimbControl extends React.Component {
     this.setState({ editing: false });
     this.setState({ climbInfoVisible: false })
   }
-
-  handleClickToDeleteClimb = (id) => {
-    this.props.firestore.delete({ collection: "climbs", doc: id });
-    this.setState({
-      selectedClimb: null,
-    });
-  };
 
   handleSelectingClimb = (id) => {
     this.props.firestore.get({ collection: "climbs", doc: id })
@@ -67,6 +55,13 @@ class ClimbControl extends React.Component {
         this.setState({ selectedClimb: firestoreClimb });
       })
   }
+
+  handleClickToDeleteClimb = (id) => {
+    this.props.firestore.delete({ collection: "climbs", doc: id });
+    this.setState({
+      selectedClimb: null,
+    });
+  };
 
 
   setVisibleComponent = () => {

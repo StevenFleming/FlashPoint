@@ -2,7 +2,7 @@ import React from "react";
 
 
 function ClimbCard(props) {
-  const { climb, onClimbClicked, editClimb, handleClimbingInfo, handleClickToDeleteClimb } = props;
+  const { climb, editClimb, handleClimbingInfo, handleClickToDeleteClimb } = props;
 
   if (climb !== null)
     return (
