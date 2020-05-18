@@ -63,6 +63,10 @@ class ClimbControl extends React.Component {
     });
   };
 
+  handleAttemptClimb = (id) => {
+    handleSelectingClimb = (id)
+  }
+
 
   setVisibleComponent = () => {
     if ((this.state.selectedClimb != null) && (this.state.climbInfoVisible === true)) {
