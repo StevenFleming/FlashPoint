@@ -1,5 +1,7 @@
 import React from "react";
-import AttemptClimb from './AttemptClimb'
+import AttemptClimb from './AttemptClimb';
+import ReviewClimb from "./ReviewClimb";
+import SendClimb from "./SendClimb";
 
 
 function ClimbCard(props) {
@@ -14,6 +16,8 @@ function ClimbCard(props) {
           <button onClick={() => handleClickToDeleteClimb(climb.id)}> Delete Climb from FiresStore</button>
           <h2>{climb.title}</h2>
           <AttemptClimb climb={climb} />
+          <SendClimb climb={climb} />
+          <ReviewClimb climb={climb} />
           <hr />
         </div>
       </React.Fragment >
