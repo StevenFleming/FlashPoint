@@ -19,7 +19,6 @@ function ReviewClimb(props) {
 
   return (
     <>
-      <h4>Edit {climb.title}!</h4>
       <form onSubmit={editClimbToFirestore}>
         <div className="form-group">
           <label>
