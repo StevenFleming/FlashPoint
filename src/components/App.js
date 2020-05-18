@@ -38,6 +38,7 @@ const Main = () => (
   <Switch>
     <Route exact path='/' component={ClimbControl} />
     <Route exact path='/signin' component={MemberControl} />
+
   </Switch>
 )
 
