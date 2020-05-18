@@ -18,6 +18,7 @@ function EditClimbForm(props) {
       incline: event.target.incline.value,
       timeCreated: firestore.FieldValue.serverTimestamp(),
       attempts: climb.attempts,
+      sends: climb.sends
     }
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate)
   }

@@ -18,6 +18,7 @@ function NewClimbForm(props) {
         incline: event.target.incline.value,
         timeCreated: firestore.FieldValue.serverTimestamp(),
         attempts: 0,
+        sends: 0
       });
   }
 

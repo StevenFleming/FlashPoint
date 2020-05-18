@@ -10,16 +10,27 @@ function AttemptClimb(props) {
   function attemptClimbToFirestore(event) {
     event.preventDefault();
 
-    const propertiesToUpdate =
+    const propertiesToUpdateAttempt =
     {
       attempts: climb.attempts + 1,
     }
+    return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateAttempt)
+  }
 
-    return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate)
+  function sendClimbToFireStore(event) {
+    event.preventDefault();
+
+    const propertiesToUpdateSend =
+    {
+      attempts: climb.attempts + 1,
+      sends: climb.sends + 1
+    }
+    return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
   }
 
   return (
     <React.Fragment>
+      <button onClick={sendClimbToFireStore}>SendClimb</button>
       <button onClick={attemptClimbToFirestore}>AttemptClimb</button>
     </React.Fragment >
   )
