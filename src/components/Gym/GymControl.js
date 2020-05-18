@@ -22,6 +22,7 @@ class GymControl extends React.Component {
     )
   }
 
+
   render() {
     let currentView = this.setVisibleComponent();
     return (

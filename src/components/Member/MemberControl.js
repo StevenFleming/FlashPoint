@@ -30,6 +30,7 @@ class MemberControl extends React.Component {
         <>
           <SignUpMember />
           <SignInMember />
+          <SignOutMember />
         </>
       )
     }
