@@ -16,6 +16,7 @@ class GymControl extends React.Component {
     };
   }
 
+
   setVisibleComponent = () => {
     return (
       <NewGymForm />

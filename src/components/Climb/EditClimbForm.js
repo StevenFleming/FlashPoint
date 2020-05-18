@@ -17,6 +17,7 @@ function EditClimbForm(props) {
       grade: event.target.grade.value,
       incline: event.target.incline.value,
       timeCreated: firestore.FieldValue.serverTimestamp(),
+      attempts: climb.attempts,
     }
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate)
   }
@@ -47,14 +48,29 @@ function EditClimbForm(props) {
           <label>
             <b>Edit Grade: Current Grade : {climb.grade}
             </b>
+            <select id="grade" name="grade">
+              <option value="v1">v1</option>
+              <option value="v2">v2</option>
+              <option value="v3">v3</option>
+              <option value="v4">v4</option>
+              <option value="v5">v5</option>
+              <option value="v6">v6</option>
+              <option value="v7">v7</option>
+              <option value="v8">v8</option>
+              <option value="v9">v9</option>
+              <option value="v10">v10</option>
+              <option value="v11">v11</option>
+            </select>
           </label>
-          <input className="form-control" type="text" name="grade" placeholder={"Grade"} />
-          <br />
           <label>
             <b> Edit Incline: Current Incline: {climb.incline}
             </b>
+            <select id="incline" name="incline">
+              <option value="slab">slab</option>
+              <option value="vertical">vertical</option>
+              <option value="overhang">overhang</option>
+            </select>
           </label>
-          <input className="form-control" type="text" name="incline" placeholder="Incline" />
           <br />
 
         </div>
