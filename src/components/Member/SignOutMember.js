@@ -17,6 +17,7 @@ function SignOutMember() {
   return (
     <React.Fragment>
       <button className="btn" onClick={doSignOut}> SignOut</button>
+      <p>{auth.currentUser}</p>
     </React.Fragment>
   )
 }

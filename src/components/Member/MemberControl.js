@@ -4,23 +4,23 @@ import SignOutMember from "./SignOutMember";
 import SignInMember from "./SignInMember";
 import SignUpMember from "./SignUpMember";
 import firebase from 'firebase/app';
+import { isLoaded } from "react-redux-firebase";
 
 
 class MemberControl extends React.Component {
+
+
   constructor(props) {
     super(props);
     this.state = {
     };
   }
 
+
   setVisibleComponent = () => {
-    let auth = firebase.auth()
-    console.log(auth.currentUser);
-    if (auth.currentUser == null) {
+    if (firebase.auth().currentUser) {
       return (
         <>
-          <SignUpMember />
-          <SignInMember />
           <SignOutMember />
         </>
       )
@@ -28,7 +28,8 @@ class MemberControl extends React.Component {
     else {
       return (
         <>
-          <SignOutMember />
+          <SignUpMember />
+          <SignInMember />
         </>
       )
     }

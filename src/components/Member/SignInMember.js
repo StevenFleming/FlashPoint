@@ -1,26 +1,25 @@
 import firebase from "firebase/app";
 import React from "react";
+import { isLoaded } from "react-redux-firebase";
 
-function SignInMember() {
-
-  const auth = firebase.auth();
-
+function SignInMember(props) {
+  let auth = (firebase.auth().currentUser)
   function doSignIn(event) {
-
     event.preventDefault();
     const email = event.target.signinEmail.value;
     const password = event.target.signinPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
       console.log("Successfully signed in!");
-      console.log("coming from SignUpMember ", auth.currentUser);
     }).catch(function (error) {
       console.log(error.message);
+
     });
   }
 
   return (
     <React.Fragment>
       <h1>Sign In</h1>
+      <p>{auth}</p>
       <p> Password must be longer than 6 characters</p>
       <form onSubmit={doSignIn}>
         <input

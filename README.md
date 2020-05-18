@@ -74,7 +74,6 @@ Both gathering feedback on particular climbs and understanding the relationship 
  * Gym can create climbs with the following properties: Setter, Grade, Incline, DateSet, DateToRemove
  * Users can log attempts on climbs with the following properties : Completed, Number of Attempts, Feedback
  * DataBase stores Gym and User Data
-
  * Display for User 
 visualization of their current climbing range at the gym
 visualization of their grade progression over time
