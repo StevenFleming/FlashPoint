@@ -29,6 +29,10 @@ function SignUpMember() {
           type='password'
           name='password'
           placeholder='Password' />
+        <input
+          type='text'
+          name='Name'
+          placeholder='Name' />
         <button type='submit'>Sign up</button>
       </form>
     </React.Fragment>

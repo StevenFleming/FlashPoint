@@ -14,9 +14,9 @@ class MemberControl extends React.Component {
   }
 
   setVisibleComponent = () => {
-    const auth = firebase.auth();
+    let auth = firebase.auth()
     console.log(auth.currentUser);
-    if (auth.currentUser !== null) {
+    if (auth.currentUser == null) {
       return (
         <>
           <SignUpMember />

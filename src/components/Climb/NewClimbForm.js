@@ -38,7 +38,7 @@ function NewClimbForm(props) {
           <input className="form-control" type="text" name="gym" placeholder="Gym" />
           <br />
           <label>
-            <b>setter
+            <b>Setter
             </b>
           </label>
           <input className="form-control" type="text" name="setter" placeholder="Setter" />
@@ -46,14 +46,27 @@ function NewClimbForm(props) {
           <label>
             <b>Grade
             </b>
+            <select id="grade" name="grade">
+              <option value="v1">v1</option>
+              <option value="v2">v2</option>
+              <option value="v3">v3</option>
+              <option value="v4">v4</option>
+              <option value="v5">v5</option>
+              <option value="v6">v6</option>
+              <option value="v7">v7</option>
+              <option value="v8">v8</option>
+              <option value="v9">v9</option>
+              <option value="v10">v10</option>
+              <option value="v11">v11</option>
+            </select>
           </label>
-          <input className="form-control" type="text" name="grade" placeholder="Grade" />
-          <br />
-          <label>
-            <b>Incline
+          <b>Incline
             </b>
-          </label>
-          <input className="form-control" type="text" name="incline" placeholder="Incline" />
+          <select id="incline" name="incline">
+            <option value="slab">slab</option>
+            <option value="vertical">vertical</option>
+            <option value="overhang">overhang</option>
+          </select>
           <br />
 
         </div>

@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import React from "react";
 
 function SignInMember() {
+
   const auth = firebase.auth();
 
   function doSignIn(event) {
