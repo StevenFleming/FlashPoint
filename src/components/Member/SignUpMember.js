@@ -9,7 +9,8 @@ function SignUpMember() {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
+    const displayName = event.target.displayName.value;
+    firebase.auth().createUserWithEmailAndPassword(email, password, displayName).then(function () {
       console.log("successfully signed up!");
       console.log("coming from Sign Up Member", auth.currentUser)
     }).catch(function (error) {
@@ -31,7 +32,7 @@ function SignUpMember() {
           placeholder='Password' />
         <input
           type='text'
-          name='Name'
+          name='displayName'
           placeholder='Name' />
         <button type='submit'>Sign up</button>
       </form>
