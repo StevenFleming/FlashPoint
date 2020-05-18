@@ -1,4 +1,5 @@
 import React from "react";
+import AttemptClimb from './AttemptClimb'
 
 
 function ClimbCard(props) {
@@ -12,6 +13,7 @@ function ClimbCard(props) {
           <button onClick={() => handleClimbingInfo(climb.id)}>See Info on this Climb</button>
           <button onClick={() => handleClickToDeleteClimb(climb.id)}> Delete Climb from FiresStore</button>
           <h2>{climb.title}</h2>
+          <AttemptClimb climb={climb} />
           <hr />
         </div>
       </React.Fragment >
