@@ -23,14 +23,14 @@ function ClimbInfo(props) {
 
           ]}
           options={{
-            title: "Current feelings",
+            title: climb.title,
             chartArea: { width: "50%" },
             hAxis: {
-              title: "Survey Questions",
+              title: "Attempts and Sends",
               minValue: 0,
             },
             vAxis: {
-              title: "User Results",
+              title: "User Attempts and Sends",
             },
           }}
           legendToggle
@@ -47,6 +47,8 @@ function ClimbInfo(props) {
       <p> Setter: {climb.setter}</p>
       <p> Attempts: {climb.attempts}</p>
       <p> Sends : {climb.sends}</p>
+      <p> Review: {climb.reviews}</p>
+      {getChart()}
     </React.Fragment>
   )
 

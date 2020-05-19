@@ -52,7 +52,8 @@ class ClimbControl extends React.Component {
           incline: climb.get("incline"),
           id: climb.id,
           attempts: climb.get("attempts"),
-          sends: climb.get("sends")
+          sends: climb.get("sends"),
+          reviews: climb.get("reviews")
         }
         this.setState({ selectedClimb: firestoreClimb });
         console.log("from Climb control", this.state.selectedClimb)
