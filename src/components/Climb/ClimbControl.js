@@ -56,7 +56,6 @@ class ClimbControl extends React.Component {
           reviews: climb.get("reviews")
         }
         this.setState({ selectedClimb: firestoreClimb });
-        console.log("from Climb control", this.state.selectedClimb)
       })
   }
 

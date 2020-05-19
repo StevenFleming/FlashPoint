@@ -1,26 +1,48 @@
 import React from "react";
-import { useFirestore } from "react-redux-firebase";
+import firebase from 'firebase/app';
+import { useSelector } from "react-redux";
+
+import { useFirestore, useFirestoreConnect, isLoaded } from "react-redux-firebase";
 
 function SendClimb(props) {
   const { climb } = props;
   const firestore = useFirestore();
 
+  useFirestoreConnect([{
+    collection: 'members'
+  }])
+
+  // const firestore = useFirestore();
+  // const members = useSelector(state => state.firestore.ordered.members);
+
+  // function getCurrentMember() {
+  //   const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
+  //   console.log(currentMember)
+  // }
+  // const propertiesToUpdateMember = {
+  //   attempts: ["testing"],
+  //   sends: ["testing"],
+  // }
+  // getCurrentMember();
+
+
+  // firestore.update({ collection: 'members', doc: currentMember.id }, propertiesToUpdateMember)
+
 
   function sendClimbToFireStore(event) {
     event.preventDefault();
-
     const propertiesToUpdateSend =
     {
       attempts: climb.attempts + 1,
       sends: climb.sends + 1
     }
-
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
   }
 
   return (
     <React.Fragment>
       <button onClick={sendClimbToFireStore}>Send Climb</button>
+
     </React.Fragment >
   )
 }
