@@ -8,7 +8,6 @@ function MemberForm() {
 
   function addGymToFirestore(event) {
     event.preventDefault();
-    const auth = firebase.auth();
     return firestore.collection('members').add(
       {
         name: event.target.name.value,

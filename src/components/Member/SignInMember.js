@@ -1,17 +1,18 @@
 import firebase from "firebase/app";
-import React from "react";
+import React, { useState } from "react";
 
 
 function SignInMember(props) {
-  const { displayMemberForm } = props
+  const [memberFormView, setMemberFormView] = useState(false);
   let auth = (firebase.auth().currentUser)
   function doSignIn(event) {
     event.preventDefault();
-    displayMemberForm();
+
     const email = event.target.signinEmail.value;
     const password = event.target.signinPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
       console.log("Successfully signed in!");
+      setMemberFormView(true);
     }).catch(function (error) {
       console.log(error.message);
 

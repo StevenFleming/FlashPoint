@@ -22,7 +22,7 @@ function SignUpMember(props) {
   }
 
   return (
-    <React.Fragment>
+    <>
       <h1>Sign up</h1>
       <form onSubmit={doSignUp}>
         <input
@@ -39,7 +39,7 @@ function SignUpMember(props) {
           placeholder='Name' />
         <button type='submit'>Sign up</button>
       </form>
-    </React.Fragment>
+    </>
   )
 }
 export default SignUpMember;
