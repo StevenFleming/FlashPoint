@@ -13,7 +13,16 @@ class MemberControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      memberFormView: false
     };
+  }
+
+  handleDisplayMemberForm = () => {
+    this.setState({ memberFormView: true })
+  }
+
+  handleDisplayDefaultMemberControl = () => {
+    this.setState({ memberFormView: false })
   }
 
 

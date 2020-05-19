@@ -9,8 +9,7 @@ function SignUpMember() {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const displayName = event.target.displayName.value;
-    firebase.auth().createUserWithEmailAndPassword(email, password, displayName).then(function () {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
       console.log("successfully signed up!");
       console.log("coming from Sign Up Member", auth.currentUser)
     }).catch(function (error) {
