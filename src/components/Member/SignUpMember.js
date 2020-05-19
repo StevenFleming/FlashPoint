@@ -1,15 +1,19 @@
-import React from "react";
+
 import firebase from "firebase/app";
+import React, { useState } from 'react';
 
 
-function SignUpMember() {
+function SignUpMember(props) {
+  const [memberFormView, setMemberFormView] = useState(false);
   const auth = firebase.auth();
+
   function doSignUp(event) {
 
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
+      setMemberFormView(true);
       console.log("successfully signed up!");
       console.log("coming from Sign Up Member", auth.currentUser)
     }).catch(function (error) {

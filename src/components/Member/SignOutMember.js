@@ -3,7 +3,9 @@ import React from "react";
 import firebase from "firebase/app";
 
 
-function SignOutMember() {
+function SignOutMember(props) {
+
+  const { hidMemberForm } = props
   const auth = firebase.auth();
   function doSignOut() {
     firebase.auth().signOut().then(function () {

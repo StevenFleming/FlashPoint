@@ -1,6 +1,8 @@
-import { auth } from "firebase";
+import firebase from 'firebase/app';
+import React from "react";
+import { useFirestore } from "react-redux-firebase";
 
-function MemberForm(props) {
+function MemberForm() {
 
   const firestore = useFirestore();
 
@@ -17,6 +19,7 @@ function MemberForm(props) {
         authID: firebase.auth().currentUser.uid
       });
   }
+
   return (
     <>
       <h1>Add which Gym you are apart of!</h1>
