@@ -1,7 +1,6 @@
 import firebase from "firebase/app";
 import React, { useState } from "react";
 
-
 function SignInMember(props) {
   let auth = (firebase.auth().currentUser)
 

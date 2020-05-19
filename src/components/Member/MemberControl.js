@@ -10,13 +10,11 @@ import MemberForm from "./MemberForm";
 
 class MemberControl extends React.Component {
 
-
   constructor(props) {
     super(props);
     this.state = {
     };
   }
-
 
   setVisibleComponent = () => {
     return (

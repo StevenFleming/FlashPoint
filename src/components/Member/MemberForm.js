@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import { useSelector } from "react-redux";
-import React from "react";
+import React, { useState } from "react";
 import { useFirestore, useFirestoreConnect, isLoaded } from "react-redux-firebase";
 
 function MemberForm() {
@@ -8,20 +8,18 @@ function MemberForm() {
   useFirestoreConnect([{
     collection: 'members'
   }])
+
+
   const firestore = useFirestore();
   const members = useSelector(state => state.firestore.ordered.members);
   console.log(members);
 
-
-
-  function findCurrentMember() {
-    if (isLoaded(members) && firebase.auth().currentUser) {
-      console.log("coming from findCurrentMember", firebase.auth().currentUser.uid)
-      const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
-      console.log("coming from findCurrentMember", currentMember)
-    }
+  if (isLoaded(members) && firebase.auth().currentUser) {
+    console.log("coming from findCurrentMember", firebase.auth().currentUser.uid)
+    const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
+    console.log("coming from findCurrentMember", currentMember)
+    console.log(" first object in currentMember", currentMember[0])
   }
-
 
   function addGymToFirestore(event) {
     event.preventDefault();
@@ -55,7 +53,6 @@ function MemberForm() {
           <br />
         </div>
         <button type="submit">Add Member Details</button>
-        <button onClick={findCurrentMember()}> console Logs </button>
       </form>
     </>
   );

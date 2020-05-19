@@ -8,6 +8,7 @@ function SendClimb(props) {
 
   function sendClimbToFireStore(event) {
     event.preventDefault();
+
     const propertiesToUpdateSend =
     {
       attempts: climb.attempts + 1,

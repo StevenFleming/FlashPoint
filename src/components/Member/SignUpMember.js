@@ -5,7 +5,8 @@ import React, { useState } from 'react';
 
 
 function SignUpMember(props) {
-  // const [memberFormView, setMemberFormView] = useState(false);
+
+
   const auth = firebase.auth();
 
   function doSignUp(event) {
