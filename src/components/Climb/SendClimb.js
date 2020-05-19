@@ -13,20 +13,20 @@ function SendClimb(props) {
   }])
 
   // const firestore = useFirestore();
-  // const members = useSelector(state => state.firestore.ordered.members);
 
-  // function getCurrentMember() {
-  //   const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
-  //   console.log(currentMember)
-  // }
-  // const propertiesToUpdateMember = {
-  //   attempts: ["testing"],
-  //   sends: ["testing"],
-  // }
-  // getCurrentMember();
+  const members = useSelector(state => state.firestore.ordered.members);
 
+  if (isLoaded(members)) {
+    const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
+    console.log("---------------", currentMember[0].authID)
 
-  // firestore.update({ collection: 'members', doc: currentMember.id }, propertiesToUpdateMember)
+    const propertiesToUpdateMember = {
+      attempts: ["testing"],
+      sends: ["testing"],
+    }
+    firestore.update({ collection: 'members', doc: currentMember[0].authID }, propertiesToUpdateMember);
+
+  }
 
 
   function sendClimbToFireStore(event) {
@@ -36,7 +36,10 @@ function SendClimb(props) {
       attempts: climb.attempts + 1,
       sends: climb.sends + 1
     }
+
+
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
+
   }
 
   return (
