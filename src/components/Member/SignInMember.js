@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import React from "react";
-import { isLoaded } from "react-redux-firebase";
+
 
 function SignInMember(props) {
   let auth = (firebase.auth().currentUser)

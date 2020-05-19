@@ -4,7 +4,7 @@ import SignOutMember from "./SignOutMember";
 import SignInMember from "./SignInMember";
 import SignUpMember from "./SignUpMember";
 import firebase from 'firebase/app';
-import { isLoaded } from "react-redux-firebase";
+
 
 
 class MemberControl extends React.Component {
