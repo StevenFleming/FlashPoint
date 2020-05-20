@@ -5,21 +5,9 @@ import { useFirestore, useFirestoreConnect, isLoaded } from "react-redux-firebas
 
 function MemberForm() {
 
-  useFirestoreConnect([{
-    collection: 'members'
-  }])
-
 
   const firestore = useFirestore();
-  const members = useSelector(state => state.firestore.ordered.members);
-  console.log(members);
 
-  if (isLoaded(members) && firebase.auth().currentUser) {
-    console.log("coming from findCurrentMember", firebase.auth().currentUser.uid)
-    const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
-    console.log("coming from findCurrentMember", currentMember)
-    console.log(" first object in currentMember", currentMember[0])
-  }
 
   function addGymToFirestore(event) {
     event.preventDefault();

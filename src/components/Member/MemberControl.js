@@ -6,13 +6,11 @@ import MemberForm from "./MemberForm";
 import SignUpMember from "./SignUpMember";
 import firebase from "firebase/app";
 import { useSelector } from "react-redux";
-import { useFirestore, useFirestoreConnect, isLoaded } from "react-redux-firebase";
+import { useFirestore, useFirestoreConnect, isLoaded, getFirebase } from "react-redux-firebase";
 import MemberDetails from "./MemberDetails";
 
 
 function MemberControl() {
-
-  const [currentMember, setCurrentMember] = useState(null);
 
   useFirestoreConnect([{
     collection: 'members'
@@ -23,47 +21,38 @@ function MemberControl() {
   const members = useSelector(state => state.firestore.ordered.members);
   let auth = (firebase.auth().currentUser);
 
-
-  if (isLoaded(members) && (auth !== null)) {
-    const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
+  function GetFirebaseMember() {
+    if (isLoaded(members) && (auth !== null)) {
+      const firebaseMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
+      if (firebaseMember !== null) {
+        return firebaseMember[0]
+      }
+      else {
+        return "not yet mounted"
+      }
+    }
   }
-
-  if (currentMember !== null) {
-    setCurrentMember(currentMember[0])
-    console.log(currentMember[0])
-  }
-
-
-
-
-  function setVisibleComponentWithAuth() {
-    return (
-      <>
-        <SignOutMember />
-      </>
-    )
-  }
+  let thisMember = GetFirebaseMember();
 
   function setVisibleComponentNoAuth() {
     return (
       <>
+        {/* <MemberDetails /> */}
         <SignUpMember />
         <SignInMember />
         <MemberForm />
-        <SignOutMember />
       </>
     )
-
   }
 
 
   let ComponentWithNoAuth = setVisibleComponentNoAuth()
-  let ComponentWithAuth = setVisibleComponentWithAuth()
 
-  if (auth !== null) {
+  if (auth !== null && thisMember !== undefined) {
     return (
       <>
-        {ComponentWithAuth}
+        <SignOutMember />
+        <MemberDetails member={thisMember} />
       </>
     )
 
