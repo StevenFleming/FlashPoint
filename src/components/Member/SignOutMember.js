@@ -4,11 +4,10 @@ import firebase from "firebase/app";
 
 
 function SignOutMember() {
-  const auth = firebase.auth();
+
   function doSignOut() {
     firebase.auth().signOut().then(function () {
       console.log("Successfully signed out!");
-      console.log("coming from SignOutMember", auth.currentUser)
     }).catch(function (error) {
       console.log(error.message);
     });

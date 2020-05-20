@@ -11,6 +11,7 @@ import SignOutMember from "./Member/SignOutMember";
 
 function App() {
   const auth = useSelector(state => state.firebase.auth)
+  console.log(auth)
   if (!isLoaded(auth)) {
     return (
       <>

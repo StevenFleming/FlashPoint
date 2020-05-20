@@ -8,18 +8,10 @@ import SignUpMember from "./SignUpMember";
 
 
 
-class MemberControl extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentMember: null,
-    };
-  }
+function MemberControl() {
 
 
-
-  setVisibleComponent = () => {
+  function setVisibleComponent() {
     return (
       <>
         <SignUpMember />
@@ -31,15 +23,16 @@ class MemberControl extends React.Component {
   }
 
 
-  render() {
-    let currentView = this.setVisibleComponent();
-    return (
-      <>
-        {currentView}
-      </>
-    )
-  }
-}
+  let currentView = setVisibleComponent();
 
+
+  return (
+    <>
+      {currentView}
+    </>
+  )
+
+
+}
 export default MemberControl
 
