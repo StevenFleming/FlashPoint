@@ -5,6 +5,7 @@ import { useFirestore } from "react-redux-firebase";
 
 
 function AttemptClimb(props) {
+
   const { climb } = props;
   const firestore = useFirestore();
 

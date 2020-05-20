@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+:root {
+  --main-color: #f8f8f6;
+  --secondary-color: #a0c3e2;
+  --third-color: #027dc5;
+  --background-color: #d9dad9;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

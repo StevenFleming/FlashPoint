@@ -8,22 +8,22 @@ function SendClimb(props) {
   const { climb } = props;
   const firestore = useFirestore();
 
-  useFirestoreConnect([{
-    collection: 'members'
-  }])
-  const members = useSelector(state => state.firestore.ordered.members);
+  // useFirestoreConnect([{
+  //   collection: 'members'
+  // }])
+  // const members = useSelector(state => state.firestore.ordered.members);
 
-  if (isLoaded(members)) {
-    const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
-    console.log("---------------", currentMember[0].authID)
+  // if (isLoaded(members)) {
+  //   const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
+  //   console.log("---------------", currentMember[0].authID)
 
-    const propertiesToUpdateMember = {
-      attempts: ["testing"],
-      sends: ["testing"],
-    }
-    firestore.update({ collection: 'members', doc: currentMember[0].authID }, propertiesToUpdateMember);
+  //   const propertiesToUpdateMember = {
+  //     attempts: ["testing"],
+  //     sends: ["testing"],
+  //   }
+  //   firestore.update({ collection: 'members', doc: currentMember[0].authID }, propertiesToUpdateMember);
 
-  }
+  // }
 
 
   function sendClimbToFireStore(event) {
