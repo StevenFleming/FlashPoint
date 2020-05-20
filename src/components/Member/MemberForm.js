@@ -19,7 +19,6 @@ function MemberForm() {
     const currentMember = members.filter((member) => member.authID === firebase.auth().currentUser.uid);
     console.log("coming from findCurrentMember", currentMember)
     console.log(" first object in currentMember", currentMember[0])
-
   }
 
   function addGymToFirestore(event) {
