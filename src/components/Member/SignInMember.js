@@ -19,7 +19,6 @@ function SignInMember() {
   return (
     <React.Fragment>
       <h1>Sign In</h1>
-      <p>{auth}</p>
       <p> Password must be longer than 6 characters</p>
       <form onSubmit={doSignIn}>
         <input

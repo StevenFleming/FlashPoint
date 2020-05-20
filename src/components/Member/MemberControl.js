@@ -17,19 +17,6 @@ class MemberControl extends React.Component {
     };
   }
 
-  handleSelectingCurrentMember = (id) => {
-    this.props.firestore.get({ collection: "members", doc: id })
-      .then((member) => {
-        const firestoreMember = {
-          name: member.get("title"),
-          attempts: member.get("attempts"),
-          gymMemberShip: member.get("gymMemberShip"),
-          timeCreated: member.get("timeCreated"),
-          authID: member.get("authID")
-        }
-        this.setState({ currentMember: firestoreMember });
-      })
-  }
 
 
   setVisibleComponent = () => {

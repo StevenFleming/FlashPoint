@@ -6,6 +6,7 @@ import ClimbControl from "./Climb/ClimbControl";
 import MemberControl from "./Member/MemberControl";
 import { useSelector } from 'react-redux'
 import { isLoaded } from 'react-redux-firebase'
+import SignOutMember from "./Member/SignOutMember";
 
 
 function App() {
@@ -13,14 +14,14 @@ function App() {
   if (!isLoaded(auth)) {
     return (
       <>
-        <MemberControl />
+        <ClimbControl />
       </>
     );
   } else {
     return (
-      <>
-        <ClimbControl />
-      </>
+      <React.Fragment>
+        <MemberControl />
+      </React.Fragment>
     )
   }
 }
