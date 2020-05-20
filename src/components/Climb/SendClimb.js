@@ -11,9 +11,6 @@ function SendClimb(props) {
   useFirestoreConnect([{
     collection: 'members'
   }])
-
-  // const firestore = useFirestore();
-
   const members = useSelector(state => state.firestore.ordered.members);
 
   if (isLoaded(members)) {
