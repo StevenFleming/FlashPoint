@@ -4,14 +4,28 @@ import SignOutMember from "./SignOutMember";
 import SignInMember from "./SignInMember";
 import MemberForm from "./MemberForm";
 import SignUpMember from "./SignUpMember";
+import firebase from "firebase/app";
+import { isLoaded } from "react-redux-firebase";
+
 
 
 
 
 function MemberControl() {
 
+  let auth = (firebase.auth().currentUser);
+  console.log("from MemberControl ---------", auth)
 
-  function setVisibleComponent() {
+
+  function setVisibleComponentWithAuth() {
+    return (
+      <>
+        <SignOutMember />
+      </>
+    )
+  }
+
+  function setVisibleComponentNoAuth() {
     return (
       <>
         <SignUpMember />
@@ -20,19 +34,28 @@ function MemberControl() {
         <SignOutMember />
       </>
     )
+
   }
 
 
-  let currentView = setVisibleComponent();
+  let ComponentWithNoAuth = setVisibleComponentNoAuth()
+  let ComponentWithAuth = setVisibleComponentWithAuth()
 
+  if (auth !== null) {
+    return (
+      <>
+        {ComponentWithAuth}
+      </>
+    )
 
-  return (
-    <>
-      {currentView}
-    </>
-  )
-
-
+  } else {
+    return (
+      <>
+        {ComponentWithNoAuth}
+      </>
+    )
+  }
 }
 export default MemberControl
+
 
