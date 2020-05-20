@@ -20,6 +20,8 @@ class ClimbControl extends React.Component {
     };
   }
 
+
+
   handleClickToSeeClimbInfo = (id) => {
     this.setState({ climbInfoVisible: true })
     this.handleSelectingClimb(id);
@@ -60,6 +62,7 @@ class ClimbControl extends React.Component {
   }
 
   handleClickToDeleteClimb = (id) => {
+    console.log("lets see these", this.props.member)
     this.props.firestore.delete({ collection: "climbs", doc: id });
     this.setState({
       selectedClimb: null,
@@ -96,7 +99,7 @@ class ClimbControl extends React.Component {
         <>
           <button onClick={this.handleClickToCreateClimb}>Click To Create Climb</button>
           <ClimbList
-            handleEditClimb={this.handleEditClimb} handleClimbingInfo={this.handleClickToSeeClimbInfo} handleClickToDeleteClimb={this.handleClickToDeleteClimb} />
+            member={this.props.member} handleEditClimb={this.handleEditClimb} handleClimbingInfo={this.handleClickToSeeClimbInfo} handleClickToDeleteClimb={this.handleClickToDeleteClimb} />
         </>
       )
     }

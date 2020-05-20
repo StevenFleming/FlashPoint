@@ -10,8 +10,9 @@ import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
 import MemberDetails from "./MemberDetails";
 
 
-function MemberControl() {
-
+function MemberControl(props) {
+  const { member } = props
+  console.log("------ should be currently signed in member", member)
   useFirestoreConnect([{
     collection: 'members'
   }])
@@ -31,6 +32,7 @@ function MemberControl() {
       }
     }
   }
+
   let thisMember = GetFirebaseMember();
 
   function setVisibleComponentNoAuth() {

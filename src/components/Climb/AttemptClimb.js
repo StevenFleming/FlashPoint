@@ -6,8 +6,9 @@ import { useFirestore } from "react-redux-firebase";
 
 function AttemptClimb(props) {
 
-  const { climb } = props;
+  const { climb, member } = props;
   const firestore = useFirestore();
+  console.log("--------- from attempt Climb", member)
 
 
 
@@ -20,9 +21,21 @@ function AttemptClimb(props) {
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateAttempt)
   }
 
+  function attemptClimbToFirestoreMember(event) {
+
+    event.preventDefault();
+
+    const propertiesToUpdateMember =
+    {
+      attempts: ["newString"]
+    }
+    console.log("attemptClimbToFirestoreMember fired off should update member.attempts to be newString")
+    return firestore.update({ collection: 'members', doc: member.id }, propertiesToUpdateMember)
+  }
+
   return (
     <React.Fragment>
-      <button onClick={attemptClimbToFirestore}>Attempt this Climb</button>
+      <button onClick={attemptClimbToFirestore, attemptClimbToFirestoreMember}>Attempt this Climb</button>
     </React.Fragment >
   )
 }

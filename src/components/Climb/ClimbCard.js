@@ -5,7 +5,7 @@ import SendClimb from "./SendClimb";
 
 
 function ClimbCard(props) {
-  const { climb, editClimb, handleClimbingInfo, handleClickToDeleteClimb } = props;
+  const { climb, editClimb, handleClimbingInfo, handleClickToDeleteClimb, member } = props;
 
   if (climb !== null)
     return (
@@ -15,9 +15,9 @@ function ClimbCard(props) {
           <button onClick={() => handleClimbingInfo(climb.id)}>See Info on this Climb</button>
           <button onClick={() => handleClickToDeleteClimb(climb.id)}> Delete Climb from FiresStore</button>
           <h2>{climb.title}</h2>
-          <AttemptClimb climb={climb} />
-          <SendClimb climb={climb} />
-          <ReviewClimb climb={climb} />
+          <AttemptClimb member={member} climb={climb} />
+          <SendClimb member={member} climb={climb} />
+          <ReviewClimb member={member} climb={climb} />
           <hr />
         </div>
       </React.Fragment >

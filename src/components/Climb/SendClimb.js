@@ -13,7 +13,6 @@ function SendClimb(props) {
       sends: climb.sends + 1
     }
 
-
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
 
   }
@@ -27,18 +26,3 @@ function SendClimb(props) {
 }
 
 export default SendClimb;
-
-//    firebase.auth().onAuthStateChanged(function (user) {
-//   if (user) {
-//     return (
-//       <React.Fragment>
-//         <button onClick={sendClimbToFireStore}>SendClimb</button>
-//       </React.Fragment >
-//     )
-//   } else {
-//     return (
-//       <p>Sign in as a user to send {climb.title}</p>
-//     )
-//   }
-// }
-//   );

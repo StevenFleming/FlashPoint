@@ -5,6 +5,7 @@ import '.././App.css'
 
 
 function MemberDetails(props) {
+
   const { member } = props
   return (
     <React.Fragment>
@@ -13,5 +14,7 @@ function MemberDetails(props) {
     </React.Fragment>
   )
 }
+
+
 
 export default MemberDetails;

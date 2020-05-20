@@ -5,6 +5,7 @@ import ClimbCard from "./ClimbCard";
 import PropTypes from "prop-types";
 
 function ClimbList(props) {
+  console.log("climbing list ---------", props.member)
 
   useFirestoreConnect([
     { collection: 'climbs' }
@@ -23,6 +24,7 @@ function ClimbList(props) {
         <hr />
         {climbs.map((climb) => {
           return <ClimbCard
+            member={props.member}
             editClimb={props.handleEditClimb}
             climb={climb}
             key={climb.id}

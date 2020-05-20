@@ -5,23 +5,47 @@ import './App.css';
 import ClimbControl from "./Climb/ClimbControl";
 import MemberControl from "./Member/MemberControl";
 import { useSelector } from 'react-redux'
-import { isLoaded } from 'react-redux-firebase'
+import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
+
+
 
 
 function App() {
+
+  useFirestoreConnect([{
+    collection: 'members'
+  }])
+
   const auth = useSelector(state => state.firebase.auth)
+  const members = useSelector(state => state.firestore.ordered.members);
+
+  function GetFirebaseMember() {
+    if (isLoaded(members) && (auth !== null)) {
+      const firebaseMember = members.filter((member) => member.authID === auth.uid);
+      if (firebaseMember !== null) {
+        return firebaseMember[0]
+      }
+      else {
+        return "not yet mounted"
+      }
+    }
+  }
+
+  let thisMember = GetFirebaseMember();
+
+
   if (!isLoaded(auth)) {
     return (
       <>
-        <p>Loading...</p>
+        <MemberControl />
       </>
     );
   } else {
     return (
       <React.Fragment>
         <Header />
-        <MemberControl />
-        <ClimbControl />
+        <MemberControl member={thisMember} />
+        <ClimbControl member={thisMember} />
         <Footer />
       </React.Fragment>
     )
