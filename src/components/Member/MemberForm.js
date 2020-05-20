@@ -1,7 +1,6 @@
 import firebase from 'firebase/app';
-import { useSelector } from "react-redux";
-import React, { useState } from "react";
-import { useFirestore, useFirestoreConnect, isLoaded } from "react-redux-firebase";
+import React from "react";
+import { useFirestore } from "react-redux-firebase";
 
 function MemberForm() {
 

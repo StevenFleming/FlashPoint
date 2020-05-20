@@ -1,5 +1,5 @@
 import firebase from "firebase/app";
-import React, { useState } from "react";
+import React from "react";
 
 function SignInMember() {
   function doSignIn(event) {
