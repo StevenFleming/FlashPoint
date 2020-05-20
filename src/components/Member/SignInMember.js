@@ -1,11 +1,10 @@
 import firebase from "firebase/app";
 import React, { useState } from "react";
 
-function SignInMember(props) {
+function SignInMember() {
+
+
   let auth = (firebase.auth().currentUser)
-
-
-
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signinEmail.value;
