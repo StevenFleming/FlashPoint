@@ -12,7 +12,6 @@ import MemberDetails from "./MemberDetails";
 
 function MemberControl(props) {
   const { member } = props
-  console.log("------ should be currently signed in member", member)
   useFirestoreConnect([{
     collection: 'members'
   }])

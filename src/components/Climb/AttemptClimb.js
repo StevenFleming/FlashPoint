@@ -17,8 +17,6 @@ function AttemptClimb(props) {
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateAttempt)
   }
 
-
-
   function attemptClimbToFirestoreMember(event) {
     const attempts = member.attempts
     const oldattempts = [...attempts]

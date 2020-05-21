@@ -2,7 +2,8 @@ import React from "react";
 import { useFirestore } from "react-redux-firebase";
 
 function SendClimb(props) {
-  const { climb } = props;
+  const { climb, member } = props;
+  console.log("from sendClimb", member)
   const firestore = useFirestore();
 
   function sendClimbToFireStore(event) {
@@ -16,12 +17,24 @@ function SendClimb(props) {
 
   }
 
-  return (
-    <React.Fragment>
-      <button onClick={sendClimbToFireStore}>Send Climb</button>
 
-    </React.Fragment >
-  )
+
+
+  if (member) {
+    return (
+      <React.Fragment>
+        <button onClick={sendClimbToFireStore} >Send Climb</button>
+      </React.Fragment >
+    )
+  } else {
+    return (
+      <React.Fragment>
+        <button onClick={sendClimbToFireStore}>Send Climb</button>
+      </React.Fragment >
+    )
+  }
 }
+
+
 
 export default SendClimb;

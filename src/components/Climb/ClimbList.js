@@ -5,8 +5,6 @@ import ClimbCard from "./ClimbCard";
 import PropTypes from "prop-types";
 
 function ClimbList(props) {
-  console.log("climbing list ---------", props.member)
-
   useFirestoreConnect([
     { collection: 'climbs' }
   ])
@@ -15,7 +13,6 @@ function ClimbList(props) {
   const climbs = useSelector(state => state.firestore.ordered.climbs)
 
   if (isLoaded(climbs)) {
-    console.log("full collection of Climbs", climbs);
     return (
       <React.Fragment>
         <br />
