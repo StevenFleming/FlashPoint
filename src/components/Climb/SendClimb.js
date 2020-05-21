@@ -43,13 +43,13 @@ function SendClimb(props) {
   if (member) {
     return (
       <React.Fragment>
-        <button class="btn" onClick={SendClimbToFirestoreMember} >Send Climb </button>
+        <button class="btnSend" onClick={SendClimbToFirestoreMember} >Send Climb </button>
       </React.Fragment >
     )
   } else {
     return (
       <React.Fragment>
-        <button class="btn" onClick={SendClimbToFireStore}>Send Climb </button>
+        <button class="btnSend" onClick={SendClimbToFireStore}>Send Climb </button>
       </React.Fragment >
     )
   }

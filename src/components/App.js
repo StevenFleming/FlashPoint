@@ -33,12 +33,15 @@ function App() {
 
   let thisMember = GetFirebaseMember();
 
-
+  // stying needed
   if (!isLoaded(auth)) {
     return (
-      <>
-        <MemberControl />
-      </>
+
+      <div class="container">
+        <>
+          <MemberControl />
+        </>
+      </div >
     );
   } else {
     return (
@@ -53,40 +56,13 @@ function App() {
 
           <Footer />
         </div>
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 }
 
-
-// function AuthIsLoaded() {
-//   const auth = useSelector(state => state.firebase.auth)
-//   if (!isLoaded(auth)) {
-//     return <div> <><MemberControl /></></div>;
-//   }
-//   else {
-//     return <div> <><ClimbControl /></></div>
-
-//   }
-// }
-
-
-
-
-
 export default App;
 
 
-  //   return (
-  //     <>
-  //       <Header />
-  //       <div className="container">
-  //         <ClimbControl />
-  //         <MemberControl />
-  //       </div>
-  //       <Footer />
-  //     </>
-  //   );
-  // }
 
 

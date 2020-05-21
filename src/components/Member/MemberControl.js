@@ -13,11 +13,10 @@ function MemberControl(props) {
   let auth = (firebase.auth().currentUser);
   function setVisibleComponentNoAuth() {
     return (
-      <div class="row1">
+      <div>
         <>
-          <div class="column2"> <SignUpMember /></div>
-          <div class="column2">  <SignInMember /></div>
-          <div class="column2">  <MemberForm /></div>
+          <div > <SignUpMember /></div>
+          <div >  <SignInMember /></div>
         </>
       </div >
     )
@@ -29,6 +28,7 @@ function MemberControl(props) {
     return (
       <>
         <MemberDetails member={member} />
+        <hr />
       </>
     )
 
@@ -36,12 +36,14 @@ function MemberControl(props) {
     return (
       <>
         <MemberForm />
+        <hr />
       </>
     )
   } else {
     return (
       <>
         {ComponentWithNoAuth}
+        <hr />
       </>
     )
   }

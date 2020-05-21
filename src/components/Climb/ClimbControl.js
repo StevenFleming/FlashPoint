@@ -22,8 +22,6 @@ class ClimbControl extends React.Component {
     };
   }
 
-
-
   handleClickToSeeClimbInfo = (id) => {
     this.setState({ climbInfoVisible: true })
     this.handleSelectingClimb(id);

@@ -37,7 +37,7 @@ function ReviewClimb(props) {
       <form onSubmit={reviewClimbToFirestore}>
         <div className="form-group">
           <label>
-            <b>Leave a Review for {climb.setter}'s route {climb.title}'
+            <b> Review {climb.setter}'s route {climb.title}'
           </b>
           </label>
           <input className="form-control" type="text" name="review" placeholder="Review" />

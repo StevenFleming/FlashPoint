@@ -112,22 +112,6 @@ function ClimbInfo(props) {
     )
 
   }
-
-  return (
-    <React.Fragment>
-      <h1>{climb.title} </h1>
-      <p> Grade: {climb.grade}</p>
-      <p> Incline: {climb.incline}</p>
-      <p> Gym: {climb.gym}</p>
-      <p> Setter: {climb.setter}</p>
-      <p> Attempts: {climb.attempts}</p>
-      <p> Sends : {climb.sends}</p>
-      <p> Review: {climb.reviews}</p>
-      {getChart()}
-      {getChartMember()}
-    </React.Fragment>
-  )
-
 }
 
 export default ClimbInfo;
