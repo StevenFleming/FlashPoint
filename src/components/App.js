@@ -43,7 +43,7 @@ function App() {
   } else {
     return (
       <React.Fragment>
-        <Header />
+        <Header member={thisMember} />
         <MemberControl member={thisMember} />
         <ClimbControl member={thisMember} />
         <Footer />
