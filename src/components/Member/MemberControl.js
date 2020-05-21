@@ -23,7 +23,6 @@ function MemberControl(props) {
     )
   }
 
-
   let ComponentWithNoAuth = setVisibleComponentNoAuth()
 
   if (auth !== null && member !== undefined) {
