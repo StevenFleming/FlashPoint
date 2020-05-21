@@ -7,24 +7,30 @@ function ReviewClimb(props) {
   const { climb } = props;
   const firestore = useFirestore();
 
-  function editClimbToFirestore(event) {
-    const reviews = climb.review
-    const oldReviews = [...reviews]
+  const climbReviews = climb.reviews
+  console.log(climbReviews)
+
+  function reviewClimbToFirestore(event) {
     event.preventDefault();
+    const climbReviews = climb.reviews
+    console.log(climbReviews)
+    const oldReviews = [...climbReviews]
     const newReview = event.target.review.value;
+    console.log("from ReviewClimb newReview", newReview)
     const allReviews = oldReviews.concat(newReview)
+    console.log("from ReviewClimb allReviews", allReviews)
+
     const propertiesToUpdate =
     {
-      review: allReviews
+      reviews: allReviews
     }
-    console.log(climb.review)
+    console.log("from ReviewClimb climb", climb)
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate)
-  }
-  console.log(climb);
 
+  }
   return (
     <>
-      <form onSubmit={editClimbToFirestore}>
+      <form onSubmit={reviewClimbToFirestore}>
         <div className="form-group">
           <label>
             <b>Leave a Review for {climb.setter}'s route {climb.title}'

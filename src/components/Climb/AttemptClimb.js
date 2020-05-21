@@ -22,6 +22,8 @@ function AttemptClimb(props) {
     const oldattempts = [...attempts]
     const updatedAttempts = oldattempts.concat(climb.id)
     event.preventDefault();
+
+
     const propertiesToUpdateMember =
     {
       attempts: updatedAttempts
