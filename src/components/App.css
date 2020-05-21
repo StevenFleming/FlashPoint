@@ -31,7 +31,7 @@
 
 .header {
 
-  color: #333333;
+  color: #070303;
   font-family: Georgia, Serif;
   font-size: 15px;
   align-content: center;
@@ -61,7 +61,7 @@
 
 .btnAttempt{
      border-top: 1px solid #9e96f8;
-   background:rgb(6, 81, 2);
+   background:rgb(165, 9, 9);
   padding: 11.5px 23px;
    -webkit-border-radius: 24px;
    -moz-border-radius: 24px;
@@ -71,7 +71,7 @@
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: #000000;
-   font-size: 12px;
+   font-size: 14px;
    font-family: Georgia, serif;
    text-decoration: none;
    vertical-align: middle;
@@ -89,7 +89,7 @@
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: #000000;
-   font-size: 12px;
+   font-size: 14px;
    font-family: Georgia, serif;
    text-decoration: none;
    vertical-align: middle;
@@ -99,9 +99,9 @@
    border-top: 1px solid #9e96f8;
    background:darkolivegreen;
    padding: 11.5px 23px;
-   -webkit-border-radius: 24px;
-   -moz-border-radius: 24px;
-   border-radius: 24px;
+   -webkit-border-radius: 14px;
+   -moz-border-radius: 14px;
+   border-radius: 14px;
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
@@ -122,3 +122,12 @@
    border-top-color: #298dcf;
    background: #298dcf;
    }
+
+.posts{
+     border-radius: 14px;
+     background: rgb(126, 81, 21);
+}
+   input {
+  border-radius: px;
+  width: 25%;
+}

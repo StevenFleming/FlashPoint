@@ -26,8 +26,7 @@ function SignUpMember() {
 
   return (
     <>
-      <p>New User, Sign Up Here</p>
-      <p> Password must be longer than 6 characters</p>
+      <h4>New User, Sign Up Here</h4>
       <form onSubmit={doSignUp}>
         <input
           type='text'

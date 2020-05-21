@@ -84,7 +84,6 @@ class ClimbControl extends React.Component {
     if ((this.state.selectedClimb != null) && (this.state.climbInfoVisible === true)) {
       return (
         <>
-          <p>Made it to ClimbInfo</p>
           <button class="btn" onClick={this.handleClickToDefaultView}>Click to Default View</button>
           <ClimbInfo climb={this.state.selectedClimb} member={this.props.member} />
         </>

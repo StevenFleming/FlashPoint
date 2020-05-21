@@ -41,25 +41,25 @@ function NewClimbForm(props) {
       <form onSubmit={addClimbToFirestore}>
         <div className="form-group">
           <label>
-            <b>Title
+            <b>Title :
             </b>
           </label>
-          <input className="form-control" type="text" name="title" placeholder="Title" />
+          <input className="form-control" type="text" name="title" placeholder="Name Your Route" />
           <br />
           <label>
-            <b>Gym
+            <b>Gym :
             </b>
           </label>
-          <input className="form-control" type="text" name="gym" placeholder="Gym" />
+          <input className="form-control" type="text" name="gym" placeholder="What Gym is the Route At?" />
           <br />
           <label>
-            <b>Setter
+            <b>Setter :
             </b>
           </label>
-          <input className="form-control" type="text" name="setter" placeholder="Setter" />
+          <input className="form-control" type="text" name="setter" placeholder="Who Set this Route?" />
           <br />
           <label>
-            <b>Grade
+            <b>Grade or Difficulty of Climb :
             </b>
             <select id="grade" name="grade">
               <option value="v1">v1</option>
@@ -75,15 +75,14 @@ function NewClimbForm(props) {
               <option value="v11">v11</option>
             </select>
           </label>
-          <b>Incline
+          <b>Incline or Style of Climb :
             </b>
           <select id="incline" name="incline">
-            <option value="slab">slab</option>
-            <option value="vertical">vertical</option>
-            <option value="overhang">overhang</option>
+            <option value="slab">Slab</option>
+            <option value="vertical">Vertical</option>
+            <option value="overhang">Overhang</option>
           </select>
           <br />
-
         </div>
         <button class="btn" type="submit">Add Climb</button>
       </form>

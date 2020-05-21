@@ -38,8 +38,6 @@ function SendClimb(props) {
     return firestore.update({ collection: 'members', doc: member.id }, propertiesToUpdateMember), firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
   }
 
-  // Styling Needed
-
   if (member) {
     return (
       <React.Fragment>

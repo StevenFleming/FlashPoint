@@ -11,17 +11,13 @@ function ClimbCard(props) {
   if (climb !== null)
     return (
       <React.Fragment>
-
-        <div>
-          <h2>{climb.title}</h2>
-          <p>{climb.grade}</p>
-          <p>Set by: {climb.setter}</p>
+        <div class="posts">
+          <h3>{climb.title}   {climb.grade} </h3>
+          <p>Set By : {climb.setter}</p>
           <ReviewClimb member={member} climb={climb} />
-        </div>
-        <hr />
-        <AttemptClimb member={member} climb={climb} />
-        <SendClimb member={member} climb={climb} />
-        <div>
+          <hr />
+          <AttemptClimb member={member} climb={climb} />
+          <SendClimb member={member} climb={climb} />
           <hr />
           <button class="btn" onClick={() => editClimb(climb.id)}>Edit this Climb</button>
           <button class="btn" onClick={() => handleClimbingInfo(climb.id)}>See Info on this Climb</button>

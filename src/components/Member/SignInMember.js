@@ -20,7 +20,7 @@ function SignInMember() {
 
   return (
     <React.Fragment>
-      <h1>Sign In</h1>
+      <h4>Have an account, Sign In</h4>
       <form onSubmit={doSignIn}>
         <input
           type='text'
