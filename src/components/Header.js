@@ -1,4 +1,5 @@
 import React from "react";
+import SignOutMember from "./Member/SignOutMember"
 
 function Header(props) {
 
@@ -6,22 +7,20 @@ function Header(props) {
 
   if (member) {
     return (
-
-      <nav className="header">
+      <div class="row">
         <React.Fragment>
-          <h1>Flashpoint</h1>
-          <li className="nav-item">
-            Welcome {member.name}
-          </li>
+          <p class="column"> {member.gymMemberShip}</p>
+          <p class="column">Flashpoint</p>
+          <p class="column">Welcome {member.name}</p>
+          <SignOutMember member={member} />
         </React.Fragment>
-      </nav>
+      </div>
     )
   } else {
     return (
       <nav className="header">
         <React.Fragment>
-          <h1>Flashpoint</h1>
-
+          <p class="headerText">Flashpoint</p>
         </React.Fragment>
       </nav >
     )

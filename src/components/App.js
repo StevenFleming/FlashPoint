@@ -43,9 +43,11 @@ function App() {
   } else {
     return (
       <React.Fragment>
-        <Header member={thisMember} />
+        <div class="header">
+          <Header member={thisMember} />
+        </div>
 
-        <div className="container">
+        <div class="container">
           <MemberControl member={thisMember} />
           <ClimbControl member={thisMember} />
         </div>

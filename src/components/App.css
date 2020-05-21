@@ -5,13 +5,30 @@
 }
 
 
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 .header {
-  color: blue;
-  font-size: 30px;
-  margin-left: 500px;
+
+  color: #333333;
+  font-family: Georgia, Serif;
+  font-size: 15px;
+  align-content: center;
+  text-align: center;
 }
 
 .container {
+  align-content: center;
   background-color: burlywood;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -26,7 +43,7 @@
   left: 0px;
   width: 100%;
   text-align: center;
-  color: white;
+  color: black;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
@@ -48,6 +65,7 @@
    text-decoration: none;
    vertical-align: middle;
    }
+
 .button:hover {
    border-top-color: #12104a;
    background: #12104a;
