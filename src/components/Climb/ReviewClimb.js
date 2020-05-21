@@ -7,15 +7,13 @@ function ReviewClimb(props) {
   const { climb } = props;
   const firestore = useFirestore();
 
+
   function climbReviewed() {
     swal.fire(
       'Added Review to Climb',
     )
   }
 
-
-  const climbReviews = climb.reviews
-  console.log(climbReviews)
 
   function reviewClimbToFirestore(event) {
     event.preventDefault();
