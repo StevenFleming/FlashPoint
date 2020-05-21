@@ -78,7 +78,7 @@ function EditClimbForm(props) {
         </div>
         <button className="btn" type="submit"> Edit {climb.title} </button>
       </form>
-      <button onClick={() => BackToDefaultView()}>Return to default view</button>
+      <button class="btn" onClick={() => BackToDefaultView()}>Return to default view</button>
     </>
   );
 }

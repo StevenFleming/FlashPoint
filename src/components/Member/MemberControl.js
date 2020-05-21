@@ -13,12 +13,13 @@ function MemberControl(props) {
   let auth = (firebase.auth().currentUser);
   function setVisibleComponentNoAuth() {
     return (
-      // Styling Needed
-      <>
-        <SignUpMember />
-        <SignInMember />
-        <MemberForm />
-      </>
+      <div class="row1">
+        <>
+          <div class="column2"> <SignUpMember /></div>
+          <div class="column2">  <SignInMember /></div>
+          <div class="column2">  <MemberForm /></div>
+        </>
+      </div >
     )
   }
 
@@ -31,6 +32,12 @@ function MemberControl(props) {
       </>
     )
 
+  } else if (auth !== null && member == undefined) {
+    return (
+      <>
+        <MemberForm />
+      </>
+    )
   } else {
     return (
       <>
@@ -39,6 +46,7 @@ function MemberControl(props) {
     )
   }
 }
+
 
 export default MemberControl
 

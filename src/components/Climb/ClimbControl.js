@@ -87,21 +87,21 @@ class ClimbControl extends React.Component {
       return (
         <>
           <p>Made it to ClimbInfo</p>
-          <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
+          <button class="btn" onClick={this.handleClickToDefaultView}>Click to Default View</button>
           <ClimbInfo climb={this.state.selectedClimb} member={this.props.member} />
         </>
       )
     } else if ((this.state.selectedClimb != null) && (this.state.editClimbFormVisible === true)) {
       return (
         <>
-          <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
+          <button class="btn" onClick={this.handleClickToDefaultView}>Click to Default View</button>
           <EditClimbForm climb={this.state.selectedClimb} onEditClimbFormSubmission={this.handleEditClimb} BackToDefaultView={this.handleClickToDefaultView} />
         </>
       );
     } else if (this.state.createClimbFormVisible) {
       return (
         <>
-          <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
+          <button class="btn" onClick={this.handleClickToDefaultView}>Click to Default View</button>
           <NewClimbForm toDefaultView={this.handleClickToDefaultView} />
         </>
       )
@@ -109,7 +109,7 @@ class ClimbControl extends React.Component {
     else {
       return (
         <>
-          <button onClick={this.handleClickToCreateClimb}>Click To Create Climb</button>
+          <button class="btn" onClick={this.handleClickToCreateClimb}>Click To Create Climb</button>
           <ClimbList
             member={this.props.member} handleEditClimb={this.handleEditClimb} handleClimbingInfo={this.handleClickToSeeClimbInfo} handleClickToDeleteClimb={this.handleClickToDeleteClimb} />
         </>

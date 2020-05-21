@@ -85,7 +85,7 @@ function NewClimbForm(props) {
           <br />
 
         </div>
-        <button className="btn" type="submit">Add Climb</button>
+        <button class="btn" type="submit">Add Climb</button>
       </form>
     </>
   );

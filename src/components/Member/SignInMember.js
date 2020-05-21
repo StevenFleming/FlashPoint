@@ -30,7 +30,7 @@ function SignInMember() {
           type='password'
           name='signinPassword'
           placeholder='Password' />
-        <button className="btn" type='submit'>Sign in</button>
+        <button class="btn" type='submit'> Sign in </button>
       </form>
     </React.Fragment>
   )

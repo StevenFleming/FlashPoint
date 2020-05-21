@@ -43,7 +43,7 @@ function ReviewClimb(props) {
           <input className="form-control" type="text" name="review" placeholder="Review" />
           <br />
         </div>
-        <button className="btn" type="submit">Add Review</button>
+        <button class="btn" type="submit">Add Review</button>
       </form>
     </>
   );

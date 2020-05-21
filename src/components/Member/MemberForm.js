@@ -23,23 +23,22 @@ function MemberForm() {
 
   return (
     <>
-      <h1>Add which Gym you are apart of!</h1>
       <form onSubmit={addGymToFirestore}>
         <div className="form-group">
           <label>
-            <b>Name
+            <b>Great whats your name?
             </b>
           </label>
           <input className="form-control" type="text" name="name" placeholder="Name" />
           <br />
           <label>
-            <b>Gym
+            <b>What Gym do you climb at!
             </b>
           </label>
           <input className="form-control" type="text" name="gym" placeholder="Gym" />
           <br />
         </div>
-        <button type="submit">Add Member Details</button>
+        <button class="btn" type="submit">Add Member Details</button>
       </form>
     </>
   );

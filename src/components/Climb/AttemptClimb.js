@@ -35,13 +35,15 @@ function AttemptClimb(props) {
   if (member) {
     return (
       <React.Fragment>
-        <button onClick={attemptClimbToFirestoreMember}>Attempt this Climb</button>
+        <button class="btn" onClick={attemptClimbToFirestoreMember}>Attempt this Climb</button>
       </React.Fragment >
     )
   } else {
     return (
       <React.Fragment>
-        <button onClick={attemptClimbToFirestore}>Attempt this Climb</button>
+        <div class="btn">
+          <button onClick={attemptClimbToFirestore}>Attempt this Climb</button>
+        </div>
       </React.Fragment >
     )
   }

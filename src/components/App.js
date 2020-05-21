@@ -50,8 +50,9 @@ function App() {
         <div class="container">
           <MemberControl member={thisMember} />
           <ClimbControl member={thisMember} />
+
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     )
   }
