@@ -36,7 +36,7 @@ function SignUpMember() {
           type='password'
           name='password'
           placeholder='Password' />
-        <button type='submit'>Sign up</button>
+        <button class="btn" type='submit'>Sign up</button>
       </form>
     </>
   )

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Header(props) {
 
   const { member } = props
@@ -8,17 +7,23 @@ function Header(props) {
   if (member) {
     return (
 
-
-      <React.Fragment>
-        <h1>Flashpoint</h1>
-        <h4> Welcome {member.name}</h4>
-      </React.Fragment>
+      <nav className="header">
+        <React.Fragment>
+          <h1>Flashpoint</h1>
+          <li className="nav-item">
+            Welcome {member.name}
+          </li>
+        </React.Fragment>
+      </nav>
     )
   } else {
     return (
-      <React.Fragment>
-        <h1>Flashpoint</h1>
-      </React.Fragment>
+      <nav className="header">
+        <React.Fragment>
+          <h1>Flashpoint</h1>
+
+        </React.Fragment>
+      </nav >
     )
   }
 }

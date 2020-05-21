@@ -18,6 +18,7 @@ class ClimbControl extends React.Component {
       editClimbFormVisible: false,
       selectedClimb: null,
       climbInfoVisible: false,
+      reviewClimbFormVisible: false,
     };
   }
 
@@ -26,6 +27,10 @@ class ClimbControl extends React.Component {
   handleClickToSeeClimbInfo = (id) => {
     this.setState({ climbInfoVisible: true })
     this.handleSelectingClimb(id);
+  }
+
+  handleClickToShowReviewClimbForm = () => {
+    this.setState({ reviewClimbFormVisible: true });
   }
 
   handleClickToCreateClimb = () => {

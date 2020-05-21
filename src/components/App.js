@@ -44,8 +44,11 @@ function App() {
     return (
       <React.Fragment>
         <Header member={thisMember} />
-        <MemberControl member={thisMember} />
-        <ClimbControl member={thisMember} />
+
+        <div className="container">
+          <MemberControl member={thisMember} />
+          <ClimbControl member={thisMember} />
+        </div>
         <Footer />
       </React.Fragment>
     )
