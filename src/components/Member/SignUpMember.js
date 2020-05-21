@@ -13,7 +13,7 @@ function SignUpMember() {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(
       function () {
         swal.fire(
-          'Signed Out!',
+          'Signed Up!',
         )
       }
     )
@@ -26,7 +26,7 @@ function SignUpMember() {
 
   return (
     <>
-      <h1>Sign up</h1>
+      <p> Password must be longer than 6 characters</p>
       <form onSubmit={doSignUp}>
         <input
           type='text'

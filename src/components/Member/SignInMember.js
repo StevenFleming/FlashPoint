@@ -9,9 +9,8 @@ function SignInMember() {
     const password = event.target.signinPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(
       function () {
-        console.log("Successfully signed in!");
         swal.fire(
-          'Successfully signed up!',
+          'Successfully signed in!',
         )
       }).catch(function (error) {
         swal.fire(error.message,
@@ -22,7 +21,6 @@ function SignInMember() {
   return (
     <React.Fragment>
       <h1>Sign In</h1>
-      <p> Password must be longer than 6 characters</p>
       <form onSubmit={doSignIn}>
         <input
           type='text'

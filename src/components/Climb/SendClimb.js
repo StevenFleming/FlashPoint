@@ -38,17 +38,18 @@ function SendClimb(props) {
     return firestore.update({ collection: 'members', doc: member.id }, propertiesToUpdateMember), firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
   }
 
+  // Styling Needed
 
   if (member) {
     return (
       <React.Fragment>
-        <button onClick={SendClimbToFirestoreMember} >Send Climb (memberLoggedIn)</button>
+        <button onClick={SendClimbToFirestoreMember} >Send Climb </button>
       </React.Fragment >
     )
   } else {
     return (
       <React.Fragment>
-        <button onClick={SendClimbToFireStore}>Send Climb (memberLoggedOut)</button>
+        <button onClick={SendClimbToFireStore}>Send Climb </button>
       </React.Fragment >
     )
   }

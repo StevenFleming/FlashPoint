@@ -14,7 +14,6 @@ function ReviewClimb(props) {
     )
   }
 
-
   function reviewClimbToFirestore(event) {
     event.preventDefault();
     const climbReviews = climb.reviews
@@ -25,7 +24,7 @@ function ReviewClimb(props) {
     {
       reviews: allReviews
     }
-    console.log("from ReviewClimb climb", climb)
+
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate).then(climbReviewed()).catch(function (error) {
       swal.fire(
         error.message,

@@ -23,6 +23,7 @@ function SignOutMember() {
   }
   return (
     <React.Fragment>
+      <p> Password must be longer than 6 characters</p>
       <button className="btn" onClick={doSignOut}> SignOut</button>
     </React.Fragment>
   )

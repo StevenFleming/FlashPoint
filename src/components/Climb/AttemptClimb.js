@@ -17,7 +17,6 @@ function AttemptClimb(props) {
   }
 
   function attemptClimbToFirestoreMember(event) {
-    console.log("attemptClimbToFirestore Member")
     const attempts = member.attempts
     const oldattempts = [...attempts]
     const updatedAttempts = oldattempts.concat(climb.id)
@@ -30,20 +29,19 @@ function AttemptClimb(props) {
     {
       attempts: climb.attempts + 1
     }
-    console.log("attemptClimbToFirestore")
     return firestore.update({ collection: 'members', doc: member.id }, propertiesToUpdateMember), firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateAttempt)
   }
 
   if (member) {
     return (
       <React.Fragment>
-        <button onClick={attemptClimbToFirestoreMember}>Attempt this Climb(memberloggedin)</button>
+        <button onClick={attemptClimbToFirestoreMember}>Attempt this Climb</button>
       </React.Fragment >
     )
   } else {
     return (
       <React.Fragment>
-        <button onClick={attemptClimbToFirestore}>Attempt this Climb (memberLoggedOut)</button>
+        <button onClick={attemptClimbToFirestore}>Attempt this Climb</button>
       </React.Fragment >
     )
   }
