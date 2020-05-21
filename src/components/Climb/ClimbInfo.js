@@ -4,10 +4,6 @@ import { Chart } from "react-google-charts";
 function ClimbInfo(props) {
   const { climb, member } = props;
 
-  const attempts = member.attempts
-  const oldattempts = [...attempts]
-  const attemptsOnRoute = oldattempts.filter((attempt) => attempt === climb.id);
-
   const getChart = () => {
     return (
       <div style={{ display: "flex", maxWidth: 1000, marginLeft: "50px" }}>
@@ -44,6 +40,12 @@ function ClimbInfo(props) {
   };
 
   const getChartMember = () => {
+    const attempts = member.attempts
+    const oldattempts = [...attempts]
+    const attemptsOnRoute = oldattempts.filter((attempt) => attempt === climb.id);
+    const sends = member.sends
+    const oldSends = [...sends]
+    const sendsOnRoute = oldSends.filter((sends) => sends === climb.id)
     return (
       <div style={{ display: "flex", maxWidth: 1000, marginLeft: "50px" }}>
         <Chart
@@ -58,7 +60,7 @@ function ClimbInfo(props) {
               "Your Sends",
             ],
 
-            [`${climb.grade}`, attemptsOnRoute.length + 1, 6],
+            [`${climb.grade}`, attemptsOnRoute.length, sendsOnRoute.length],
 
           ]}
           options={{
@@ -79,6 +81,38 @@ function ClimbInfo(props) {
   };
 
 
+  if (member) {
+    return (
+      <React.Fragment>
+        <h1>{climb.title} </h1>
+        <p> Grade: {climb.grade}</p>
+        <p> Incline: {climb.incline}</p>
+        <p> Gym: {climb.gym}</p>
+        <p> Setter: {climb.setter}</p>
+        <p> Attempts: {climb.attempts}</p>
+        <p> Sends : {climb.sends}</p>
+        <p> Review: {climb.reviews}</p>
+        {getChart()}
+        {getChartMember()}
+      </React.Fragment>
+    )
+
+  } else {
+    return (
+      <React.Fragment>
+        <h1>{climb.title} </h1>
+        <p> Grade: {climb.grade}</p>
+        <p> Incline: {climb.incline}</p>
+        <p> Gym: {climb.gym}</p>
+        <p> Setter: {climb.setter}</p>
+        <p> Attempts: {climb.attempts}</p>
+        <p> Sends : {climb.sends}</p>
+        <p> Review: {climb.reviews}</p>
+        {getChart()}
+      </React.Fragment>
+    )
+
+  }
 
   return (
     <React.Fragment>
