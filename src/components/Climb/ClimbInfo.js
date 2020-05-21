@@ -59,7 +59,6 @@ function ClimbInfo(props) {
               "Your Attempts",
               "Your Sends",
             ],
-
             [`${climb.grade}`, attemptsOnRoute.length, sendsOnRoute.length],
 
           ]}

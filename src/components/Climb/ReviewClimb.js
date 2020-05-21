@@ -8,14 +8,19 @@ function ReviewClimb(props) {
   const firestore = useFirestore();
 
   function editClimbToFirestore(event) {
-
+    const reviews = climb.review
+    const oldReviews = [...reviews]
     event.preventDefault();
+    const newReview = event.target.review.value;
+    const allReviews = oldReviews.concat(newReview)
     const propertiesToUpdate =
     {
-      reviews: event.target.review.value,
+      review: allReviews
     }
+    console.log(climb.review)
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate)
   }
+  console.log(climb);
 
   return (
     <>

@@ -7,7 +7,6 @@ import { useFirestore } from "react-redux-firebase";
 function AttemptClimb(props) {
   const firestore = useFirestore();
   const { climb, member } = props;
-
   function attemptClimbToFirestore(event) {
     event.preventDefault();
     const propertiesToUpdateAttempt =

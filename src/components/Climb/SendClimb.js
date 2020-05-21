@@ -15,7 +15,6 @@ function SendClimb(props) {
       attempts: climb.attempts + 1,
       sends: climb.sends + 1
     }
-    console.log("memberlogged out")
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
   }
 
@@ -40,7 +39,6 @@ function SendClimb(props) {
       attempts: climb.attempts + 1,
       sends: climb.sends + 1
     }
-    console.log("memberlogged in")
     return firestore.update({ collection: 'members', doc: member.id }, propertiesToUpdateMember), firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
   }
 
