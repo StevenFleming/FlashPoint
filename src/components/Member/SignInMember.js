@@ -1,17 +1,24 @@
 import firebase from "firebase/app";
 import React from "react";
+import swal from 'sweetalert2';
 
 function SignInMember() {
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signinEmail.value;
     const password = event.target.signinPassword.value;
-    firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
-      console.log("Successfully signed in!");
-    }).catch(function (error) {
-      console.log(error.message);
-    });
+    firebase.auth().signInWithEmailAndPassword(email, password).then(
+      function () {
+        console.log("Successfully signed in!");
+        swal.fire(
+          'Successfully signed up!',
+        )
+      }).catch(function (error) {
+        swal.fire(error.message,
+        );
+      });
   }
+
 
   return (
     <React.Fragment>

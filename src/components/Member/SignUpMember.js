@@ -1,7 +1,7 @@
 
 import firebase from "firebase/app";
 import React from 'react';
-
+import swal from "sweetalert2";
 
 
 function SignUpMember() {
@@ -10,11 +10,18 @@ function SignUpMember() {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
-      console.log("successfully signed up!");
-    }).catch(function (error) {
-      console.log(error.message);
-    });
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(
+      function () {
+        swal.fire(
+          'Signed Out!',
+        )
+      }
+    )
+      .catch(function (error) {
+        swal.fire(
+          error.message,
+        )
+      });
   }
 
   return (

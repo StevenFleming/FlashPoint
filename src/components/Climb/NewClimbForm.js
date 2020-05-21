@@ -1,14 +1,19 @@
 import React from "react";
 import { useFirestore } from "react-redux-firebase";
-
+import swal from "sweetalert2";
 
 function NewClimbForm(props) {
+  const { toDefaultView } = props
+
+  function climbAdded() {
+    swal.fire(
+      'Climb Added',
+    )
+  }
 
   const firestore = useFirestore();
-
   function addClimbToFirestore(event) {
     event.preventDefault();
-
     return firestore.collection('climbs').add(
       {
         title: event.target.title.value,
@@ -20,6 +25,13 @@ function NewClimbForm(props) {
         attempts: 0,
         sends: 0,
         reviews: [""]
+      }).then(
+        climbAdded(),
+        toDefaultView()
+      ).catch(function (error) {
+        swal.fire(
+          error.message,
+        )
       });
   }
 

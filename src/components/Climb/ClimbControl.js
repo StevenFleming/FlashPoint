@@ -6,6 +6,7 @@ import ClimbList from "./ClimbList";
 import EditClimbForm from './EditClimbForm';
 import { connect } from "react-redux";
 import { withFirestore } from "react-redux-firebase";
+import swal from "sweetalert2"
 
 
 
@@ -60,6 +61,11 @@ class ClimbControl extends React.Component {
         this.setState({ selectedClimb: firestoreClimb });
       })
   }
+  climbDeletedAlert = () => {
+    swal.fire(
+      'Climb Deleted',
+    )
+  }
 
   handleClickToDeleteClimb = (id) => {
     console.log("lets see these", this.props.member)
@@ -67,6 +73,7 @@ class ClimbControl extends React.Component {
     this.setState({
       selectedClimb: null,
     });
+    this.climbDeletedAlert()
   };
 
 
@@ -90,7 +97,7 @@ class ClimbControl extends React.Component {
       return (
         <>
           <button onClick={this.handleClickToDefaultView}>Click to Default View</button>
-          <NewClimbForm />
+          <NewClimbForm toDefaultView={this.handleClickToDefaultView} />
         </>
       )
     }

@@ -6,8 +6,6 @@ function SendClimb(props) {
   console.log("from sendClimb", member)
   const firestore = useFirestore();
 
-
-
   function SendClimbToFireStore(event) {
     event.preventDefault();
     const propertiesToUpdateSend =
@@ -17,8 +15,6 @@ function SendClimb(props) {
     }
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
   }
-
-
 
   function SendClimbToFirestoreMember(event) {
     const attempts = member.attempts

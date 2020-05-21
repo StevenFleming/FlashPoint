@@ -36,7 +36,6 @@ function AttemptClimb(props) {
 
   if (member) {
     return (
-
       <React.Fragment>
         <button onClick={attemptClimbToFirestoreMember}>Attempt this Climb(memberloggedin)</button>
       </React.Fragment >

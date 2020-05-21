@@ -1,11 +1,18 @@
 import React from "react";
 import { useFirestore } from "react-redux-firebase";
-
+import swal from "sweetalert2"
 
 
 function ReviewClimb(props) {
   const { climb } = props;
   const firestore = useFirestore();
+
+  function climbReviewed() {
+    swal.fire(
+      'Added Review to Climb',
+    )
+  }
+
 
   const climbReviews = climb.reviews
   console.log(climbReviews)
@@ -13,19 +20,19 @@ function ReviewClimb(props) {
   function reviewClimbToFirestore(event) {
     event.preventDefault();
     const climbReviews = climb.reviews
-    console.log(climbReviews)
     const oldReviews = [...climbReviews]
     const newReview = event.target.review.value;
-    console.log("from ReviewClimb newReview", newReview)
     const allReviews = oldReviews.concat(newReview)
-    console.log("from ReviewClimb allReviews", allReviews)
-
     const propertiesToUpdate =
     {
       reviews: allReviews
     }
     console.log("from ReviewClimb climb", climb)
-    return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate)
+    return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdate).then(climbReviewed()).catch(function (error) {
+      swal.fire(
+        error.message,
+      )
+    });
 
   }
   return (
