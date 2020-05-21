@@ -12,7 +12,6 @@ function SendClimb(props) {
       attempts: climb.attempts + 1,
       sends: climb.sends + 1
     }
-
     return firestore.update({ collection: 'climbs', doc: climb.id }, propertiesToUpdateSend)
 
   }
