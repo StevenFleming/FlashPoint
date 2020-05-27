@@ -1,5 +1,6 @@
 import React from 'react';
 import '.././App.css'
+import PropTypes from "prop-types";
 
 
 
@@ -10,9 +11,12 @@ function MemberDetails(props) {
   return (
     <React.Fragment>
       <h1>{member.name} </h1>
-      <p> Current Gym: {member.gymMemberShip}</p>
     </React.Fragment>
   )
+}
+
+MemberDetails.proptype = {
+  member: PropTypes.obj
 }
 
 export default MemberDetails;

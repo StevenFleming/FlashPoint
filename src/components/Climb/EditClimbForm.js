@@ -1,5 +1,6 @@
 import React from "react";
 import { useFirestore } from "react-redux-firebase";
+import PropTypes from "prop-types";
 
 
 
@@ -81,6 +82,13 @@ function EditClimbForm(props) {
       <button class="btn" onClick={() => BackToDefaultView()}>Return to default view</button>
     </>
   );
+}
+
+
+EditClimbForm.proptype = {
+  climb: PropTypes.obj,
+  BackToDefaultView: PropTypes.function
+
 }
 
 export default EditClimbForm;

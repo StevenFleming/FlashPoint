@@ -21,9 +21,10 @@ function SignOutMember() {
         )
       });
   }
+
   return (
     <React.Fragment>
-      <button className="btn" onClick={doSignOut}> SignOut</button>
+      <button className="btnSignOut" onClick={doSignOut}> SignOut</button>
     </React.Fragment>
   )
 }

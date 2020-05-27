@@ -44,4 +44,8 @@ function MemberForm() {
   );
 }
 
+MemberForm.proptype = {
+
+}
+
 export default MemberForm;

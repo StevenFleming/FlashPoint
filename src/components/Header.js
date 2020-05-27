@@ -9,12 +9,14 @@ function Header(props) {
     return (
       <div class="row">
         <React.Fragment>
-          <p class="column"> {member.gymMemberShip}</p>
-          <p class="column">Flashpoint</p>
-          <p class="column">Welcome {member.name}</p>
+          <div class="headerText">
+            <p class="column"> {member.gymMemberShip}</p>
+            <p class="column">Flashpoint</p>
+            <p class="column">Welcome {member.name}</p>
+          </div>
           <SignOutMember member={member} />
         </React.Fragment>
-      </div>
+      </div >
     )
   } else {
     return (

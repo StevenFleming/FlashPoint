@@ -1,5 +1,6 @@
 import React from "react";
 import { useFirestore } from "react-redux-firebase";
+import PropTypes from "prop-types";
 
 function SendClimb(props) {
   const { climb, member } = props;
@@ -53,6 +54,10 @@ function SendClimb(props) {
   }
 }
 
+SendClimb.proptype = {
+  climb: PropTypes.obj,
+  member: PropTypes.obj
+}
 
 
 export default SendClimb;

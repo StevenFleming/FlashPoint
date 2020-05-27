@@ -1,6 +1,7 @@
 import React from "react";
 import { useFirestore } from "react-redux-firebase";
 import swal from "sweetalert2";
+import PropTypes from "prop-types";
 
 function NewClimbForm(props) {
   const { toDefaultView } = props
@@ -88,6 +89,10 @@ function NewClimbForm(props) {
       </form>
     </>
   );
+}
+
+NewClimbForm.proptype = {
+  toDefaultView: PropTypes.func,
 }
 
 export default NewClimbForm;

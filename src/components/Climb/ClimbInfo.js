@@ -1,8 +1,10 @@
 import React from "react";
 import { Chart } from "react-google-charts";
+import PropTypes from "prop-types";
 
 function ClimbInfo(props) {
   const { climb, member } = props;
+  const sendRate = (climb.sends / climb.attempts).toPrecision(2)
 
   const getChart = () => {
     return (
@@ -91,7 +93,9 @@ function ClimbInfo(props) {
         <p> Attempts: {climb.attempts}</p>
         <p> Sends : {climb.sends}</p>
         <p> Review: {climb.reviews}</p>
+        <p> Send Rate :{sendRate}</p>
         {getChart()}
+        <hr />
         {getChartMember()}
       </React.Fragment>
     )
@@ -107,11 +111,17 @@ function ClimbInfo(props) {
         <p> Attempts: {climb.attempts}</p>
         <p> Sends : {climb.sends}</p>
         <p> Review: {climb.reviews}</p>
+        <p> Send Rate :{sendRate}</p>
         {getChart()}
       </React.Fragment>
     )
 
   }
+}
+
+ClimbInfo.proptype = {
+  member: PropTypes.obj,
+  climb: PropTypes.obj
 }
 
 export default ClimbInfo;

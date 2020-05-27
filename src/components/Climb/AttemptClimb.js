@@ -1,6 +1,6 @@
 import React from "react";
 import { useFirestore } from "react-redux-firebase";
-
+import PropTypes from "prop-types";
 
 
 
@@ -47,6 +47,9 @@ function AttemptClimb(props) {
   }
 }
 
-
+AttemptClimb.proptype = {
+  member: PropTypes.obj,
+  climb: PropTypes.obj,
+}
 
 export default AttemptClimb;

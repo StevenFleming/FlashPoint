@@ -2,17 +2,16 @@ import React from "react";
 import AttemptClimb from './AttemptClimb';
 import ReviewClimb from "./ReviewClimb";
 import SendClimb from "./SendClimb";
-import swal from "sweetalert2";
-
+import PropTypes from "prop-types";
 
 function ClimbCard(props) {
-  const { climb, editClimb, handleClimbingInfo, handleClickToDeleteClimb, member } = props;
+  const { climb, member, editClimb, handleClimbingInfo, handleClickToDeleteClimb } = props;
 
   if (climb !== null)
     return (
       <React.Fragment>
         <div class="posts">
-          <h3>{climb.title}   {climb.grade} </h3>
+          <h3>{climb.title} {climb.grade} </h3>
           <p>Set By : {climb.setter}</p>
           <ReviewClimb member={member} climb={climb} />
           <hr />
@@ -20,9 +19,8 @@ function ClimbCard(props) {
           <SendClimb member={member} climb={climb} />
           <hr />
           <button class="btn" onClick={() => editClimb(climb.id)}>Edit this Climb</button>
-          <button class="btn" onClick={() => handleClimbingInfo(climb.id)}>See Info on this Climb</button>
-          <button class="btn" onClick={() => handleClickToDeleteClimb(climb.id)} > Delete Climb from FiresStore</button>
-          <hr />
+          <button class="btn" onClick={() => handleClimbingInfo(climb.id)}>Info on this Climb</button>
+          <button class="btn" onClick={() => handleClickToDeleteClimb(climb.id)} > Delete Climb </button>
         </div>
       </React.Fragment >
     )
@@ -34,5 +32,14 @@ function ClimbCard(props) {
     )
   }
 }
+
+ClimbCard.proptype = {
+  member: PropTypes.obj,
+  climb: PropTypes.obj,
+  editClimb: PropTypes.func,
+  handleClimbingInfo: PropTypes.func,
+  handleClickToDeleteClimb: PropTypes.func,
+}
+
 
 export default ClimbCard

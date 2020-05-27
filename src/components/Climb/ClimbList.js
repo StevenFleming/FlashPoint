@@ -17,8 +17,7 @@ function ClimbList(props) {
       <React.Fragment>
         <br />
         <br />
-        <h1><b>All Climb's</b></h1>
-        <hr />
+        <h1><b> Seattle Bouldering Project's Climbs</b></h1>
         {climbs.map((climb) => {
           return <ClimbCard
             member={props.member}
@@ -40,7 +39,10 @@ function ClimbList(props) {
 
 
 ClimbList.proptype = {
-  onClimbSelection: PropTypes.func
+  onClimbSelection: PropTypes.func,
+  member: PropTypes.obj,
+  handleEditClimb: PropTypes.func,
+  handleClimbingInfo: PropTypes.func
 }
 
 export default ClimbList;

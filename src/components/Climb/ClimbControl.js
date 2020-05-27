@@ -10,6 +10,7 @@ import swal from "sweetalert2"
 
 
 
+
 class ClimbControl extends React.Component {
   constructor(props) {
     super(props);
@@ -127,6 +128,8 @@ class ClimbControl extends React.Component {
 const mapStateToProps = (state) => {
   return {}
 }
+
+
 
 ClimbControl = connect(mapStateToProps)(ClimbControl);
 export default withFirestore(ClimbControl);

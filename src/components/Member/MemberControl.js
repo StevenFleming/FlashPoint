@@ -6,6 +6,7 @@ import MemberForm from "./MemberForm";
 import SignUpMember from "./SignUpMember";
 import firebase from "firebase/app";
 import MemberDetails from "./MemberDetails";
+import PropTypes from "prop-types";
 
 
 function MemberControl(props) {
@@ -49,6 +50,9 @@ function MemberControl(props) {
   }
 }
 
+MemberControl.proptype = {
+  member: PropTypes.obj
+}
 
 export default MemberControl
 

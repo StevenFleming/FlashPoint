@@ -49,11 +49,9 @@ function App() {
         <div class="header">
           <Header member={thisMember} />
         </div>
-
         <div class="container">
           <MemberControl member={thisMember} />
           <ClimbControl member={thisMember} />
-
           <Footer />
         </div>
       </React.Fragment >

@@ -1,6 +1,7 @@
 import React from "react";
 import { useFirestore } from "react-redux-firebase";
 import swal from "sweetalert2"
+import PropTypes from "prop-types";
 
 
 function ReviewClimb(props) {
@@ -39,10 +40,14 @@ function ReviewClimb(props) {
           <input className="form-control" type="text" name="review" placeholder="Share some vibes with your setter" />
           <br />
         </div>
-        <button class="btn" type="submit">Leave a Note!</button>
+        <button class="btnReview" type="submit">Leave a Note!</button>
       </form>
     </>
   );
+}
+
+ReviewClimb.proptype = {
+  climb: PropTypes.obj,
 }
 
 export default ReviewClimb;
